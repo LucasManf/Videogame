@@ -15,12 +15,17 @@ public class PlayerMovement : MonoBehaviour
     private float Horizontal;
     private bool Grounded;
     private float LastShoot;
+    private bool rapidFireActive;
+    private float rapidFireStartTime;
+    private float rapidFireDuration = 3f;
+    private bool isShooting = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        rapidFireActive = false;
     }
 
     // Update is called once per frame
@@ -39,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
             Grounded = true;
         }
         else Grounded = false;
+        
 
 
         if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && Grounded)
@@ -47,10 +53,43 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
+
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > LastShoot + 0.25f)
         {
             Shoot();
-            LastShoot = Time.time;
+            LastShoot = Time.time;           
+        }
+
+        if(rapidFireActive) {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isShooting = true;
+            } else if (Input.GetKeyUp(KeyCode.Space))
+            {
+                isShooting = false;
+            }
+
+            if (isShooting)
+            {
+                // Dispara continuamente mientras se mantenga presionada la tecla
+                if (Time.time > LastShoot + 0.1f) // Ajusta el intervalo de disparo según sea necesario
+                {
+                    Shoot();
+                    LastShoot = Time.time;
+                }
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && Time.time > LastShoot + 0.25f)
+        {
+            Shoot();
+            LastShoot = Time.time;           
+        }
+    
+        
+
+        if (rapidFireActive && Time.time > rapidFireStartTime + rapidFireDuration)
+        {
+            rapidFireActive = false;
         }
     }
 
@@ -62,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
 
         GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
         bullet.GetComponent<BulletScript>().SetDirection(direction);
+        
     }
 
     private void Jump()
@@ -74,6 +114,14 @@ public class PlayerMovement : MonoBehaviour
         Rigidbody2D.velocity = new Vector2(Horizontal * Speed, Rigidbody2D.velocity.y);
     }
 
-
+     private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("RapidFire"))
+        {
+            rapidFireActive = true;
+            rapidFireStartTime = Time.time;
+            Destroy(other.gameObject);
+        }
+    }
 
 }
