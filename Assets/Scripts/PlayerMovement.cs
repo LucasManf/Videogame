@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class JohnMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public GameObject BulletPrefab;
     public float Speed;
@@ -15,7 +15,6 @@ public class JohnMovement : MonoBehaviour
     private float Horizontal;
     private bool Grounded;
     private float LastShoot;
-    private int Health = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -75,10 +74,6 @@ public class JohnMovement : MonoBehaviour
         Rigidbody2D.velocity = new Vector2(Horizontal * Speed, Rigidbody2D.velocity.y);
     }
 
-    public void Hit()
-    {
-        Health = Health - 1;
-        if(Health == 0) Destroy(gameObject);
-    }
+
 
 }

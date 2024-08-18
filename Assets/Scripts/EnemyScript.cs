@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public GameObject BulletPrefab;
-    public GameObject John;
+    public GameObject Player;
     
     private float LastShoot;
     private int Health = 3;
@@ -16,12 +16,12 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(John==null) return;
-        Vector3 direction = John.transform.position - transform.position; //la posicion de John - la posicion de grunt, obtenemos el vector direccion que va de grunt a john. si el componente x de la direcciion es positiva, el grunt tiene que mirar hacia la derecha, sino, hacia la izquierda
+        if(Player==null) return;
+        Vector3 direction = Player.transform.position - transform.position; //la posicion de Player - la posicion de grunt, obtenemos el vector direccion que va de grunt a Player. si el componente x de la direcciion es positiva, el grunt tiene que mirar hacia la derecha, sino, hacia la izquierda
         if(direction.x >=0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         else transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
 
-        float distance = Mathf.Abs(John.transform.position.x - transform.position.x);
+        float distance = Mathf.Abs(Player.transform.position.x - transform.position.x);
     
         if(distance < 1.0f && Time.time > LastShoot + 0.7f)
         {

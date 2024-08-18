@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    public GameObject John;
+    public GameObject Player;
 
     // Update is called once per frame
     void Update()
     {
-        if(John!=null)
+        if(Player!=null)
         {
         Vector3 position = transform.position;
-        position.x = John.transform.position.x;
+        position.x = Player.transform.position.x;
         transform.position = position;
         }
     }

@@ -33,12 +33,12 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
-        JohnMovement john = collision.GetComponent<JohnMovement>();
+        PlayerHealth player = collision.GetComponent<PlayerHealth>();
         EnemyScript enemy = collision.GetComponent<EnemyScript>();
     
-        if(john != null)
+        if(player != null)
         {
-            john.Hit();
+            player.DealDamage();
         }
         if(enemy != null)
         {
