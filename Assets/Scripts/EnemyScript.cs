@@ -25,8 +25,11 @@ public class EnemyScript : MonoBehaviour
     
         if(distance < 1.0f && Time.time > LastShoot + 0.7f)
         {
-            Shoot();
-            LastShoot = Time.time;
+            if (Player.activeSelf)
+            {
+                Shoot();
+                LastShoot = Time.time;
+            }
         }
     }
 

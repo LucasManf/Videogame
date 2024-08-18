@@ -17,6 +17,7 @@ private float invicibleCounter;
 private SpriteRenderer theSR;
 
 public GameObject deathEffect;
+private PlayerRespawn playerRespawn;
 
 
 public void Awake(){
@@ -34,6 +35,7 @@ instance = this;
     {
         currentHealth = maxHealth;
        theSR = GetComponent<SpriteRenderer>();
+       playerRespawn = GetComponent<PlayerRespawn>();
     }
 
     // Update is called once per frame
@@ -54,34 +56,32 @@ instance = this;
 
     public void DealDamage(){
 
-  if(invicibleCounter <= 0){
+        if(invicibleCounter <= 0){
 
-      currentHealth--;
+        currentHealth--;
+        UIController.instance.UpdateHealthDisplay();
 
-    UIController.instance.UpdateHealthDisplay();
+            if(currentHealth <= 0)
+            {
+                currentHealth = 0;
+                gameObject.SetActive(false);
+        
 
-
-     if(currentHealth <= 0)
-     {
-
-        currentHealth = 0;
-        gameObject.SetActive(false);
-    
-        /* LevelManager.instance.RespawnPlayer(); */
-      
-
-     }else{
-            
-        invicibleCounter = invicibleLenght;
-        theSR.color = new Color(theSR.color.r,theSR.color.g, theSR.color.b, .5f);
-
-
-}
-
-    /*  */
+                if (playerRespawn != null)
+                {
+                    playerRespawn.Respawn();
+                    currentHealth = maxHealth; // Restauramos la salud al máximo
+                    UIController.instance.UpdateHealthDisplay(); // Actualizamos el UI
+                }
+            }
+            else
+            { 
+                invicibleCounter = invicibleLenght;
+                theSR.color = new Color(theSR.color.r,theSR.color.g, theSR.color.b, .5f);
+            }
 
 
-}
+        }
 
     }
 
