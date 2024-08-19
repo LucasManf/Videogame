@@ -54,11 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > LastShoot + 0.25f)
-        {
-            Shoot();
-            LastShoot = Time.time;           
-        }
+        
 
         if(rapidFireActive) {
             if (Input.GetKeyDown(KeyCode.Space))
