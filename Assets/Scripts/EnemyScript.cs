@@ -31,16 +31,20 @@ public class EnemyScript : MonoBehaviour
 
         float distance = Mathf.Abs(Player.transform.position.x - transform.position.x);
 
-        if (distance < 1.0f && Time.time > LastShoot + 0.7f)
+        if (distance < 1.0f)
         {
-            isShooting = true;
+            if(Time.time > LastShoot + 0.7f)
+            {
 
-            Vector3 direction = Player.transform.position - transform.position;
-            if (direction.x >= 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-            else transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+                Vector3 direction = Player.transform.position - transform.position;
+                if (direction.x >= 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                else transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+                isShooting = true;
+                Shoot();
+                LastShoot = Time.time;
 
-            Shoot();
-            LastShoot = Time.time;
+            }
+            
         }
         else
         {
