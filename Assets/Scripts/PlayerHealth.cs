@@ -6,36 +6,35 @@ public class PlayerHealth : MonoBehaviour
 {
 
 
-//VARIABLES
-public static PlayerHealth instance;
+    //VARIABLES
+    public static PlayerHealth instance;
 
-public int currentHealth, maxHealth;
+    public int currentHealth, maxHealth;
 
-public float invicibleLenght; 
-private float invicibleCounter;
+    public float invicibleLenght; 
+    private float invicibleCounter;
 
-private SpriteRenderer theSR;
+    private SpriteRenderer theSR;
 
-public GameObject deathEffect;
-private PlayerRespawn playerRespawn;
-
-
-public void Awake(){
-
-instance = this;
+    public GameObject deathEffect;
+    private PlayerRespawn playerRespawn;
+    private UIController uiController;
 
 
-}
+    public void Awake(){
+
+    instance = this;
 
 
-
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-       theSR = GetComponent<SpriteRenderer>();
-       playerRespawn = GetComponent<PlayerRespawn>();
+        theSR = GetComponent<SpriteRenderer>();
+        playerRespawn = GetComponent<PlayerRespawn>();
+        uiController = FindObjectOfType<UIController>();
     }
 
     // Update is called once per frame
@@ -65,14 +64,15 @@ instance = this;
             {
                 currentHealth = 0;
                 gameObject.SetActive(false);
+                uiController.GameOver();
         
 
-                if (playerRespawn != null)
+                /* if (playerRespawn != null)
                 {
                     playerRespawn.Respawn();
                     currentHealth = maxHealth; // Restauramos la salud al máximo
                     UIController.instance.UpdateHealthDisplay(); // Actualizamos el UI
-                }
+                } */
             }
             else
             { 

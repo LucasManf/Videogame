@@ -2,26 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
-
-
     public static UIController instance;
+    public UnityEngine.UI.Image heart1, heart2, heart3, heart4, heart5;
+    public Sprite heartFull, heartEmpty;
+    public Text gemText;
+    public Image fadeScreen;
+    public float fadeSpeed;
+    public GameObject levelCompleteText;
 
+    private bool shouldFadeToBlack, shouldFadeFromBlack;
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private AudioClip gameOverSound;
 
- public UnityEngine.UI.Image heart1, heart2, heart3, heart4, heart5;
-
- public Sprite heartFull, heartEmpty;
-
- public Text gemText;
-
-
-  public Image fadeScreen;
-  public float fadeSpeed;
-  private bool shouldFadeToBlack, shouldFadeFromBlack;
-
-  public GameObject levelCompleteText;
 
     private void Awake(){
 
@@ -31,6 +27,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameOverScreen.SetActive(false);
         /* UpdateGemCount(); */
         /* FadeFromBlack(); */
     }
@@ -39,23 +36,23 @@ public class UIController : MonoBehaviour
     void Update()
     {
         
-if(shouldFadeToBlack){
+        if(shouldFadeToBlack){
 
-    fadeScreen.color = new Color(fadeScreen.color.r,fadeScreen.color.g,fadeScreen.color.b,Mathf.MoveTowards(fadeScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
-    if(fadeScreen.color.a == 1f){
-shouldFadeToBlack = false;
+            fadeScreen.color = new Color(fadeScreen.color.r,fadeScreen.color.g,fadeScreen.color.b,Mathf.MoveTowards(fadeScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
+            if(fadeScreen.color.a == 1f){
+                shouldFadeToBlack = false;
 
-    }
-}
-if(shouldFadeFromBlack){
+                }
+        }
+        if(shouldFadeFromBlack){
 
-    fadeScreen.color = new Color(fadeScreen.color.r,fadeScreen.color.g,fadeScreen.color.b,Mathf.MoveTowards(fadeScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
-    if(fadeScreen.color.a == 0f){
-        
-        shouldFadeToBlack = false;
+            fadeScreen.color = new Color(fadeScreen.color.r,fadeScreen.color.g,fadeScreen.color.b,Mathf.MoveTowards(fadeScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
+            if(fadeScreen.color.a == 0f){
+                
+                shouldFadeToBlack = false;
 
-    }
-}
+            }
+        }
     }
 
     public void UpdateHealthDisplay(){
@@ -114,30 +111,56 @@ if(shouldFadeFromBlack){
                 heart5.sprite = heartEmpty;
                 break;
 
-   }
+      }
 
 
     }
 
 
-/* public void UpdateGemCount(){
+    /* public void UpdateGemCount(){
 
-gemText.text = LevelManager.instance.gemsCollected.ToString();
+    gemText.text = LevelManager.instance.gemsCollected.ToString();
 
-} */
+    } */
 
-public void FadeToBlack(){
+    public void FadeToBlack(){
 
-shouldFadeToBlack = true;
-shouldFadeFromBlack = false;
+        shouldFadeToBlack = true;
+        shouldFadeFromBlack = false;
 
-}
+    }
 
-public void FadeFromBlack(){
+    public void FadeFromBlack(){
 
-shouldFadeFromBlack = true;
-shouldFadeToBlack = false;
+        shouldFadeFromBlack = true;
+        shouldFadeToBlack = false;
 
-}
+    }
+
+
+    //GAME OVER
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+        /* SoundManager.instance.PlaySound(gameOverSound); */
+
+    }
+
+
+    //Game Over functions
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 
 }

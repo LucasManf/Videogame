@@ -53,25 +53,28 @@ public class EnemyScript : MonoBehaviour
 
         if (!isShooting)
         {
+            //movimiento e invertir sprite
             if (movingRight)
             {
+                transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 transform.position += moveSpeed * Time.deltaTime * Vector3.right;
             }
             else
             {
+                transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
                 transform.position += moveSpeed * Time.deltaTime * Vector3.left;
             }
 
-            // Invertir dirección al llegar al borde
+            //limites de movimiento
             if (transform.position.x > startPosition + 0.5f)
             {
                 movingRight = false;
-                transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+
             }
             else if (transform.position.x < startPosition - 0.5f)
             {
                 movingRight = true;
-                transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
             }
         }
     }
