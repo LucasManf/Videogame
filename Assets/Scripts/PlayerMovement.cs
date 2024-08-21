@@ -87,8 +87,15 @@ public class PlayerMovement : MonoBehaviour
                     // Dispara continuamente mientras se mantenga presionada la tecla
                     if (Time.time > LastShoot + 0.1f) // Ajusta el intervalo de disparo según sea necesario
                     {
-                        Shoot();
-                        LastShoot = Time.time;
+                        if(ShotgunActive)
+                        {
+                            Shotgun();
+                        }
+                        else
+                        {
+                            Shoot();
+                        }
+                        LastShoot = Time.time;   
                     }
                 }
             }
@@ -96,13 +103,19 @@ public class PlayerMovement : MonoBehaviour
             {
                 if(ShotgunActive)
                 {
-                    Shotgun();
+                    if(Time.time > LastShoot + 0.8f)
+                    {
+                        Shotgun();
+                        LastShoot = Time.time;
+                    }
+                    
                 }
                 else
                 {
                     Shoot();
+                    LastShoot = Time.time;
                 }
-                LastShoot = Time.time;           
+                
             }
         
         
