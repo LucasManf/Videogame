@@ -195,7 +195,7 @@ public class UIController : MonoBehaviour
     private void PauseGame(bool status)
     {
         pauseScreen.SetActive(status);
-
+        PlayerMovement.instance.SetPauseState(status);
         
         if(status)
         {
@@ -210,7 +210,8 @@ public class UIController : MonoBehaviour
     public void Resume()
     {
         pauseScreen.SetActive(false);
-
+        Time.timeScale = 1;
+        PlayerMovement.instance.SetPauseState(false);
     }
 #endregion
 

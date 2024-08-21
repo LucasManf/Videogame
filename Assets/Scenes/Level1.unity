@@ -1595,8 +1595,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 975268145}
   - {fileID: 1465432936}
+  - {fileID: 975268145}
   - {fileID: 1259663782}
   - {fileID: 613212149}
   m_Father: {fileID: 952265824}
@@ -6559,7 +6559,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 876701666}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

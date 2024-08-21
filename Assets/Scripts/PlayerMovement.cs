@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject BulletPrefab;
     public float Speed;
     public float JumpForce;
+    public static PlayerMovement instance;
     
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
@@ -19,6 +20,12 @@ public class PlayerMovement : MonoBehaviour
     private float rapidFireStartTime;
     private float rapidFireDuration = 3f;
     private bool isShooting = false;
+    private bool isPaused = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -31,61 +38,65 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Horizontal = Input.GetAxisRaw("Horizontal");
-
-        if(Horizontal < 0.0f) transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-        else if (Horizontal > 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-
-        Animator.SetBool("Running", Horizontal != 0.0F);
-
-        Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
-        if(Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
-        {
-            Grounded = true;
-        }
-        else Grounded = false;
-        
-
-
-        if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && Grounded)
+        if (!isPaused)
         {
 
-            Jump();
-        }
+            Horizontal = Input.GetAxisRaw("Horizontal");
 
+            if(Horizontal < 0.0f) transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+            else if (Horizontal > 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
-        
+            Animator.SetBool("Running", Horizontal != 0.0F);
 
-        if(rapidFireActive) {
-            if (Input.GetKeyDown(KeyCode.Space))
+            Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
+            if(Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
             {
-                isShooting = true;
-            } else if (Input.GetKeyUp(KeyCode.Space))
+                Grounded = true;
+            }
+            else Grounded = false;
+            
+
+
+            if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && Grounded)
             {
-                isShooting = false;
+
+                Jump();
             }
 
-            if (isShooting)
-            {
-                // Dispara continuamente mientras se mantenga presionada la tecla
-                if (Time.time > LastShoot + 0.1f) // Ajusta el intervalo de disparo según sea necesario
+
+            
+
+            if(rapidFireActive) {
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    Shoot();
-                    LastShoot = Time.time;
+                    isShooting = true;
+                } else if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    isShooting = false;
+                }
+
+                if (isShooting)
+                {
+                    // Dispara continuamente mientras se mantenga presionada la tecla
+                    if (Time.time > LastShoot + 0.1f) // Ajusta el intervalo de disparo según sea necesario
+                    {
+                        Shoot();
+                        LastShoot = Time.time;
+                    }
                 }
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && Time.time > LastShoot + 0.25f)
-        {
-            Shoot();
-            LastShoot = Time.time;           
-        }
-    
+            else if (Input.GetKeyDown(KeyCode.Space) && Time.time > LastShoot + 0.25f)
+            {
+                Shoot();
+                LastShoot = Time.time;           
+            }
         
+            
 
-        if (rapidFireActive && Time.time > rapidFireStartTime + rapidFireDuration)
-        {
-            rapidFireActive = false;
+            if (rapidFireActive && Time.time > rapidFireStartTime + rapidFireDuration)
+            {
+                rapidFireActive = false;
+            }
         }
     }
 
@@ -118,6 +129,11 @@ public class PlayerMovement : MonoBehaviour
             rapidFireStartTime = Time.time;
             Destroy(other.gameObject);
         }
+    }
+
+    public void SetPauseState(bool paused)
+    {
+        isPaused = paused;
     }
 
 }

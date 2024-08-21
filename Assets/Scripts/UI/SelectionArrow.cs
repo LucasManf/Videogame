@@ -30,7 +30,7 @@ public class SelectionArrow : MonoBehaviour
         }
 
         //interactuar
-        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
             Interact();
         }
