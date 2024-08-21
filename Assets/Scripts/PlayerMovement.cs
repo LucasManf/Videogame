@@ -18,10 +18,13 @@ public class PlayerMovement : MonoBehaviour
     private float LastShoot;
     private bool rapidFireActive;
     private float rapidFireStartTime;
-    private float rapidFireDuration = 3f;
+    private float rapidFireDuration = 5f;
     private bool SloMoActive;
     private float SloMoStartTime;
     private float SloMoDuration = 3f;
+    private bool ShotgunActive;
+    private float ShotgunStartTime;
+    private float ShotgunDuration = 7;
     private bool isShooting = false;
     private bool isPaused = false;
 
@@ -69,7 +72,8 @@ public class PlayerMovement : MonoBehaviour
 
             
 
-            if(rapidFireActive) {
+            if(rapidFireActive)
+            {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     isShooting = true;
@@ -90,7 +94,14 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.Space) && Time.time > LastShoot + 0.25f)
             {
-                Shoot();
+                if(ShotgunActive)
+                {
+                    Shotgun();
+                }
+                else
+                {
+                    Shoot();
+                }
                 LastShoot = Time.time;           
             }
         
@@ -113,6 +124,13 @@ public class PlayerMovement : MonoBehaviour
             if (SloMoActive && Time.time > SloMoStartTime + SloMoDuration)
             {
                 SloMoActive = false;
+                Speed = 1;
+            }
+
+            if (ShotgunActive && Time.time > ShotgunStartTime + ShotgunDuration)
+            {
+                ShotgunActive = false;
+                Speed = 1;
             }
         }
     }
@@ -126,6 +144,38 @@ public class PlayerMovement : MonoBehaviour
         GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
         bullet.GetComponent<BulletScript>().SetDirection(direction);
         
+    }
+
+    private void Shotgun()
+    {
+        // Shoot straight bullet
+        Vector3 direction = transform.localScale.x == 1.0f ? Vector2.right : Vector2.left;
+        GameObject bullet1 = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        bullet1.GetComponent<BulletScript>().SetDirection(direction);
+
+        // Shoot bullet at 30 degrees up
+        float angleUp = 30.0f * Mathf.Deg2Rad;  // Convert degrees to radians
+        direction = Quaternion.Euler(0, 0, angleUp) * (transform.localScale.x == 1.0f ? Vector2.right : Vector2.left);
+        GameObject bullet2 = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        bullet2.GetComponent<BulletScript>().SetDirection(direction);
+
+        // Shoot bullet at 30 degrees down
+        float angleDown = -30.0f * Mathf.Deg2Rad;  // Convert degrees to radians
+        direction = Quaternion.Euler(0, 0, angleDown) * (transform.localScale.x == 1.0f ? Vector2.right : Vector2.left);
+        GameObject bullet3 = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        bullet3.GetComponent<BulletScript>().SetDirection(direction);
+
+        // Adjust the angle for the second and third bullets
+        float angleAdjustment = 300.0f * Mathf.Deg2Rad;  // Adjust the angle as needed
+        angleUp += angleAdjustment;
+        angleDown -= angleAdjustment;
+
+        // Calculate directions for the second and third bullets with the adjusted angles
+        direction = Quaternion.Euler(0, 0, angleUp) * (transform.localScale.x == 1.0f ? Vector2.right : Vector2.left);
+        bullet2.GetComponent<BulletScript>().SetDirection(direction);
+
+        direction = Quaternion.Euler(0, 0, angleDown) * (transform.localScale.x == 1.0f ? Vector2.right : Vector2.left);
+        bullet3.GetComponent<BulletScript>().SetDirection(direction);
     }
 
     private void Jump()
@@ -151,6 +201,14 @@ public class PlayerMovement : MonoBehaviour
         {
             SloMoActive = true;
             SloMoStartTime = Time.time;
+            Destroy(other.gameObject);
+            Speed = 1.3f;
+        }
+
+        if (other.gameObject.CompareTag("Shotgun"))
+        {
+            ShotgunActive = true;
+            ShotgunStartTime = Time.time;
             Destroy(other.gameObject);
         }
 

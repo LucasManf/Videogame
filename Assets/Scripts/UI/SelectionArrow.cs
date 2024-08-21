@@ -24,7 +24,7 @@ public class SelectionArrow : MonoBehaviour
         {
             ChangePosition(-1);
         }
-        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.DownArrow))
+        if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             ChangePosition(1);
         }

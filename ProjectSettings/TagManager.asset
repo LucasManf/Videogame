@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RapidFire
   - SloMo
+  - Shotgun
   layers:
   - Default
   - TransparentFX
