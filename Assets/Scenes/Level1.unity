@@ -608,6 +608,11 @@ MonoBehaviour:
   BulletPrefab: {fileID: 3326123624401585946, guid: 2c94a3324e1751542ad14de0bab95db8, type: 3}
   Speed: 1
   JumpForce: 150
+  RapidFireText: {fileID: 7020753760817861307, guid: 0fe94a6d7fc26734b9a865c623e92753, type: 3}
+  SloMoText: {fileID: 9142637086354326095, guid: 88f846211a6230345a6417fcf7c399fd, type: 3}
+  ShotgunText: {fileID: 1024175443033478490, guid: 023a151d8d5ce8c428a2eccc36091bf7, type: 3}
+  textDuration: 1
+  TextMovementSpeed: 0.5
 --- !u!95 &306989420
 Animator:
   serializedVersion: 5

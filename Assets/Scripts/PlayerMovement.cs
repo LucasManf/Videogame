@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class PlayerMovement : MonoBehaviour
     public float Speed;
     public float JumpForce;
     public static PlayerMovement instance;
+
+    public GameObject RapidFireText; // Prefabricado del sprite que deseas mostrar como texto
+    public GameObject SloMoText;
+    public GameObject ShotgunText;
+    public float textDuration = 1f;
+    public float TextMovementSpeed = 0.4f; // Velocidad de movimiento hacia arriba
+
     
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
@@ -27,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     private float ShotgunDuration = 7;
     private bool isShooting = false;
     private bool isPaused = false;
+
+    
 
     private void Awake()
     {
@@ -148,6 +158,35 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+
+    private IEnumerator ShowTemporaryText(GameObject text, float duration)
+    {
+        // Instanciar el sprite
+        GameObject spriteObject = Instantiate(text, transform.position, Quaternion.identity);
+
+        // Obtener el SpriteRenderer
+        SpriteRenderer spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
+
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            // Mover el sprite hacia arriba
+            spriteObject.transform.Translate(Vector3.up * TextMovementSpeed * Time.deltaTime);
+
+            // Reducir la transparencia
+            Color color = spriteRenderer.color;
+            color.a = 1f - elapsedTime / duration;
+            spriteRenderer.color = color;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Destruir el sprite
+        Destroy(spriteObject);
+    }
+
     private void Shoot()
     {
         Vector3 direction;
@@ -208,6 +247,7 @@ public class PlayerMovement : MonoBehaviour
             rapidFireActive = true;
             rapidFireStartTime = Time.time;
             Destroy(other.gameObject);
+            StartCoroutine(ShowTemporaryText(RapidFireText, textDuration));
         }
 
         if (other.gameObject.CompareTag("SloMo"))
@@ -216,6 +256,7 @@ public class PlayerMovement : MonoBehaviour
             SloMoStartTime = Time.time;
             Destroy(other.gameObject);
             Speed = 1.3f;
+            StartCoroutine(ShowTemporaryText(SloMoText, textDuration));
         }
 
         if (other.gameObject.CompareTag("Shotgun"))
@@ -223,6 +264,7 @@ public class PlayerMovement : MonoBehaviour
             ShotgunActive = true;
             ShotgunStartTime = Time.time;
             Destroy(other.gameObject);
+            StartCoroutine(ShowTemporaryText(ShotgunText, textDuration));
         }
 
     }
