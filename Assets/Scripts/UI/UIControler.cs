@@ -172,6 +172,10 @@ public class UIController : MonoBehaviour
     //Game Over functions
     public void Restart()
     {
+        if(Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
