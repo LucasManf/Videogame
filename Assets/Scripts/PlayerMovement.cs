@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     private bool rapidFireActive;
     private float rapidFireStartTime;
     private float rapidFireDuration = 3f;
+    private bool SloMoActive;
+    private float SloMoStartTime;
+    private float SloMoDuration = 3f;
     private bool isShooting = false;
     private bool isPaused = false;
 
@@ -91,11 +94,25 @@ public class PlayerMovement : MonoBehaviour
                 LastShoot = Time.time;           
             }
         
+        
+            if(SloMoActive)
+            {
+                Time.timeScale = 0.3f;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
             
 
             if (rapidFireActive && Time.time > rapidFireStartTime + rapidFireDuration)
             {
                 rapidFireActive = false;
+            }
+
+            if (SloMoActive && Time.time > SloMoStartTime + SloMoDuration)
+            {
+                SloMoActive = false;
             }
         }
     }
@@ -129,6 +146,14 @@ public class PlayerMovement : MonoBehaviour
             rapidFireStartTime = Time.time;
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.CompareTag("SloMo"))
+        {
+            SloMoActive = true;
+            SloMoStartTime = Time.time;
+            Destroy(other.gameObject);
+        }
+
     }
 
     public void SetPauseState(bool paused)

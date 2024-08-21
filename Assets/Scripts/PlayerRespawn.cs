@@ -16,6 +16,6 @@ public class PlayerRespawn : MonoBehaviour
     {
         transform.position = respawnPoint;
         gameObject.SetActive(true);
-        // Otras acciones que quieras realizar en el respawn
+        /* Time.timeScale = 1; */
     }
 }
