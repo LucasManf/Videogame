@@ -38,9 +38,13 @@ public class BulletScript : MonoBehaviour
 
         if (collision.CompareTag("RapidFire"))
         {
-
             return;
         }
+        if (collision.CompareTag("Object"))
+        {
+            DestroyBullet();
+        }
+        
     
         if(player != null)
         {
