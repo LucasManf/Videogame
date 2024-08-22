@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public GameObject BulletPrefab;
+    public GameObject EnemyBulletPrefab;
     public GameObject Player;
     
     private float LastShoot;
@@ -40,7 +40,7 @@ public class EnemyScript : MonoBehaviour
                 if (direction.x >= 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 else transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
                 isShooting = true;
-                Shoot();
+                EnemyShoot();
                 LastShoot = Time.time;
 
             }
@@ -80,14 +80,14 @@ public class EnemyScript : MonoBehaviour
     }
 
 
-    private void Shoot()
+    private void EnemyShoot()
     {
         Vector3 direction;
         if(transform.localScale.x == 1.0f) direction = Vector2.right;
         else direction = Vector2.left;
 
-        GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
-        bullet.GetComponent<BulletScript>().SetDirection(direction);
+        GameObject bullet = Instantiate(EnemyBulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        bullet.GetComponent<EnemyBulletScript>().SetDirection(direction);
     }
 
     public void Hit()

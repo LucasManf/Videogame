@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject SloMoText;
     public GameObject ShotgunText;
     public float textDuration = 1f;
-    public float TextMovementSpeed = 0.4f; // Velocidad de movimiento hacia arriba
+    public float TextMovementSpeed = 0.2f; // Velocidad de movimiento hacia arriba
 
     
     private Rigidbody2D Rigidbody2D;
@@ -240,7 +240,7 @@ public class PlayerMovement : MonoBehaviour
         Rigidbody2D.velocity = new Vector2(Horizontal * Speed, Rigidbody2D.velocity.y);
     }
 
-     private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("RapidFire"))
         {

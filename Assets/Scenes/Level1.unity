@@ -612,7 +612,7 @@ MonoBehaviour:
   SloMoText: {fileID: 9142637086354326095, guid: 88f846211a6230345a6417fcf7c399fd, type: 3}
   ShotgunText: {fileID: 1024175443033478490, guid: 023a151d8d5ce8c428a2eccc36091bf7, type: 3}
   textDuration: 1
-  TextMovementSpeed: 0.5
+  TextMovementSpeed: 0.2
 --- !u!95 &306989420
 Animator:
   serializedVersion: 5
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 454488739}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a89101b95259c04394c3d5fe94197d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 3326123624401585946, guid: 2c94a3324e1751542ad14de0bab95db8, type: 3}
+  EnemyBulletPrefab: {fileID: 3326123624401585946, guid: 5d3e356e499b96e499aec0d3b9398aa7, type: 3}
   Player: {fileID: 306989414}
   moveSpeed: 0.4
 --- !u!1 &515185098
