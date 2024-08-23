@@ -63,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
             else if (Horizontal > 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
             Animator.SetBool("Running", Horizontal != 0.0F);
+            Animator.SetBool("Jumping", Grounded != true);
+
 
             Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
             if(Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
@@ -193,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
         if(transform.localScale.x == 1.0f) direction = Vector2.right;
         else direction = Vector2.left;
 
-        GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.15f, Quaternion.identity);
         bullet.GetComponent<BulletScript>().SetDirection(direction);
         
     }
@@ -202,19 +204,19 @@ public class PlayerMovement : MonoBehaviour
     {
         // Shoot straight bullet
         Vector3 direction = transform.localScale.x == 1.0f ? Vector2.right : Vector2.left;
-        GameObject bullet1 = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        GameObject bullet1 = Instantiate(BulletPrefab, transform.position + direction * 0.15f, Quaternion.identity);
         bullet1.GetComponent<BulletScript>().SetDirection(direction);
 
         // Shoot bullet at 30 degrees up
         float angleUp = 30.0f * Mathf.Deg2Rad;  // Convert degrees to radians
         direction = Quaternion.Euler(0, 0, angleUp) * (transform.localScale.x == 1.0f ? Vector2.right : Vector2.left);
-        GameObject bullet2 = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        GameObject bullet2 = Instantiate(BulletPrefab, transform.position + direction * 0.15f, Quaternion.identity);
         bullet2.GetComponent<BulletScript>().SetDirection(direction);
 
         // Shoot bullet at 30 degrees down
         float angleDown = -30.0f * Mathf.Deg2Rad;  // Convert degrees to radians
         direction = Quaternion.Euler(0, 0, angleDown) * (transform.localScale.x == 1.0f ? Vector2.right : Vector2.left);
-        GameObject bullet3 = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        GameObject bullet3 = Instantiate(BulletPrefab, transform.position + direction * 0.15f, Quaternion.identity);
         bullet3.GetComponent<BulletScript>().SetDirection(direction);
 
         // Adjust the angle for the second and third bullets
@@ -233,6 +235,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         Rigidbody2D.AddForce(Vector2.up * JumpForce);
+        Animator.SetBool("Jumping", true);
     }
 
     private void FixedUpdate()

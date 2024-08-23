@@ -15,6 +15,7 @@ public class EnemyScript : MonoBehaviour
     public float moveSpeed; // Velocidad de movimiento del enemigo
     private bool movingRight = true; // Dirección inicial de movimiento
     private bool isShooting = false;
+    
 
 
     void Start()

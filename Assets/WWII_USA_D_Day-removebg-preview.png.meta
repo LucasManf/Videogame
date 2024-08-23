@@ -1,0 +1,1615 @@
+fileFormatVersion: 2
+guid: 8184365b85d492e449694ec96c9eae38
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 534
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448b6bd465452dc419542073d484bd1c
+      internalID: 303893218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 538
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4fe156319ffc94fa84769bb3b6349f
+      internalID: 1953054068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 499
+        width: 51
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbaf09e7966b334d86b63376795c677
+      internalID: 1764062272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 499
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebad62d2cc2faf42bc2626d35632fb7
+      internalID: 442377540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 453
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb9befbcc0a2954c8d5a154eaedd243
+      internalID: 404707335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 420
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40deb52a81ee124598a2ec08ea2bd8f
+      internalID: -1290367375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 419
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b289a4a5ebf054481c097de5fe04e1
+      internalID: -1486653489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 418
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b36a26dad563b4aa3022ae0dc11099
+      internalID: 668640492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 418
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9306b60c4535d794080d55349b6e5c35
+      internalID: -1212922528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 418
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797a39e1f45604941b4170311b8a9d70
+      internalID: 417851984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 418
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc66dead84e9ba4a8b2e4991c1d026a
+      internalID: 133759706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 418
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7437e8b57a81f945add58d9d4c80edc
+      internalID: 757181163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 418
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb37c8254e071f042b87a1a21f4ae8c9
+      internalID: -558646156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 418
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088f41a32050d454f897a93557167c9b
+      internalID: -1442538268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 421
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5701b63d963a5d943bfcaf5bfd597e50
+      internalID: 1072404048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 367
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca15e1da931d95740bfbc0e5f17d743b
+      internalID: 859315106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 366
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71484e0b5f54ed4c97eb729002f6dad
+      internalID: -139631538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 367
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9444dd03c9ba68846aae2ee215ea3d74
+      internalID: -1412063802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 367
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a1d961d4ff6ab4ab7e128b98c2f3c3
+      internalID: 447689065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 367
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d02d55e7c48c5c489b423d37355e21f
+      internalID: -643105010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 367
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6622da51c3c7b97489a5aca66da1a323
+      internalID: -994477284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 367
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f3b294a449fbd4ab24508b7796cd33
+      internalID: -1808860695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 367
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc50764c29d5ea4aae777f4b431e47f
+      internalID: 1635479747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 367
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b2792250dd6864f8be87eaa548b297
+      internalID: -1143306804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 341
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36709a815f968b24a8acffd66fac53fb
+      internalID: 98443446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 341
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56898a476d8438344a5a61ae8c7f3289
+      internalID: -1697209813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_40
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 341
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf4978d6835a14458963e5662b14112
+      internalID: 758404137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 341
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79bcff0d183b3014ab640face3b62f49
+      internalID: 1587823366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 341
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74646115a5b12049b049aa5b197ec2b
+      internalID: -2093976857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_43
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 341
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0332a41cefb55f14e8580f40a01c0a49
+      internalID: -1018643118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_44
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 341
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eccab903b13aba7439b38b5491e43420
+      internalID: 1425805003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_45
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 314
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990be2016db53994baf4c2c5b6eaaaa1
+      internalID: -2140611897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_46
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 314
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8061c1cee90de9040b75456fa7af0787
+      internalID: 825797900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_47
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 313
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0f025be2471bb489cf226bec16f28d
+      internalID: 1396149240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_48
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 314
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf6c230a2200ca4e9cc4ba4c049e504
+      internalID: -1569057931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_49
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 314
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 185761b45ecd83a4a8ceb94ab98d8944
+      internalID: 54698689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_50
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 314
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f156c05ef9d75348a94d1721f0d9f5e
+      internalID: -1154459965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_51
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 314
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8bd40a9f21503143b7d50ac99c0a2b0
+      internalID: -35795648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_52
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 314
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e5600f1b146dd4aaf50da38a7c5bc5
+      internalID: 535474742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_53
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 287
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3d7ea570b06174d8b35c0b6f973210
+      internalID: -437333052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_54
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 286
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145cbb79aa003844f943c20c4edd2c78
+      internalID: 1117406768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_55
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 287
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2156665f3bffa4b8986e02ff785eb3
+      internalID: -1581888205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_56
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 286
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ef27f819e3330438dfeecd4d74dc7f
+      internalID: 455779737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_57
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 286
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d9adee10315834994c72a3b69aa3e3
+      internalID: 1171283973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_58
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 287
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6acc3db1d72934ab408613d766b585
+      internalID: 1954839349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_59
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 286
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6b6791b5faf4e4c9781d61f045e0d2
+      internalID: 550743638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_60
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 286
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b478452f13280d141b81b9a554e64e2f
+      internalID: -1313890514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_61
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 287
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4210ac5ff45c247b13d0ade526836b
+      internalID: -12619922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_62
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 256
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228c42e6780e4c8438d7f80d06cc6daa
+      internalID: -656498894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_63
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 255
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b049285ecd4ffcb41a07418aaeb2ad36
+      internalID: 1241380724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_64
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 255
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7428efa261c3a64a9d0f14152774ce5
+      internalID: -778419870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_65
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 255
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c196ee3d3aa9064892b02598d3ba612
+      internalID: -659274991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_66
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 255
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53bda04a675b4e4eb605efcd0bf3c07
+      internalID: 217919736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_67
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 255
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a7423a87b403242a37f323e3654bc4
+      internalID: 2104613959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_68
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 255
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24c4ed42e699234683e1eb816d72f1d
+      internalID: 585347316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_69
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 226
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52df48e689ec61c449feea60e1c8f021
+      internalID: -1114123421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_70
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 225
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dcaef642758cc541947d72f1d0255b8
+      internalID: 1522460338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_71
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 225
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d461ec42fda8f2449c3d247d7cf754e
+      internalID: 807240031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_72
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 225
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfd5fbf78c446f4fa17e406a134a45d
+      internalID: 685595062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_73
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 225
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc9e48d8b76c234bbd90e23cec8b567
+      internalID: 347766271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_74
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 225
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc1faaadfd5a4143a4891f0d9b898f1
+      internalID: -1411846410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_75
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 225
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b733a876a8d3e2489b67bd9ffcf6352
+      internalID: -376209116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_76
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 225
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61847fc0852e7764d84cd49adcd646aa
+      internalID: 2086050154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_77
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 225
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 327ac9da90259904181c738b44cb30d7
+      internalID: 327377615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_78
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 141
+        width: 135
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a615e1773250d9b418fa79eac4b62e00
+      internalID: -1912837232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_79
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 145
+        width: 157
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfebd4f9d4a64fb4fbe65c0b50a55974
+      internalID: 1880127092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WWII_USA_D_Day-removebg-preview_80
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 78
+        width: 136
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f829d36234bf94f4a96fb7895d8d08b2
+      internalID: 315925639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      WWII_USA_D_Day-removebg-preview_0: 303893218
+      WWII_USA_D_Day-removebg-preview_1: 1953054068
+      WWII_USA_D_Day-removebg-preview_10: -1569017850
+      WWII_USA_D_Day-removebg-preview_11: 404707335
+      WWII_USA_D_Day-removebg-preview_12: 1060987560
+      WWII_USA_D_Day-removebg-preview_13: -1860329933
+      WWII_USA_D_Day-removebg-preview_14: -1290367375
+      WWII_USA_D_Day-removebg-preview_15: -1486653489
+      WWII_USA_D_Day-removebg-preview_16: 668640492
+      WWII_USA_D_Day-removebg-preview_17: -1212922528
+      WWII_USA_D_Day-removebg-preview_18: 417851984
+      WWII_USA_D_Day-removebg-preview_19: 133759706
+      WWII_USA_D_Day-removebg-preview_2: 1764062272
+      WWII_USA_D_Day-removebg-preview_20: 757181163
+      WWII_USA_D_Day-removebg-preview_21: -558646156
+      WWII_USA_D_Day-removebg-preview_22: -1442538268
+      WWII_USA_D_Day-removebg-preview_23: 1072404048
+      WWII_USA_D_Day-removebg-preview_24: 469479911
+      WWII_USA_D_Day-removebg-preview_25: -905028940
+      WWII_USA_D_Day-removebg-preview_26: -1378579247
+      WWII_USA_D_Day-removebg-preview_27: 579007769
+      WWII_USA_D_Day-removebg-preview_28: -290841839
+      WWII_USA_D_Day-removebg-preview_29: 859315106
+      WWII_USA_D_Day-removebg-preview_3: 442377540
+      WWII_USA_D_Day-removebg-preview_30: -139631538
+      WWII_USA_D_Day-removebg-preview_31: -1412063802
+      WWII_USA_D_Day-removebg-preview_32: 447689065
+      WWII_USA_D_Day-removebg-preview_33: -643105010
+      WWII_USA_D_Day-removebg-preview_34: -994477284
+      WWII_USA_D_Day-removebg-preview_35: -1808860695
+      WWII_USA_D_Day-removebg-preview_36: 1635479747
+      WWII_USA_D_Day-removebg-preview_37: -1143306804
+      WWII_USA_D_Day-removebg-preview_38: 98443446
+      WWII_USA_D_Day-removebg-preview_39: -1697209813
+      WWII_USA_D_Day-removebg-preview_4: -1982902011
+      WWII_USA_D_Day-removebg-preview_40: 758404137
+      WWII_USA_D_Day-removebg-preview_41: 1587823366
+      WWII_USA_D_Day-removebg-preview_42: -2093976857
+      WWII_USA_D_Day-removebg-preview_43: -1018643118
+      WWII_USA_D_Day-removebg-preview_44: 1425805003
+      WWII_USA_D_Day-removebg-preview_45: -2140611897
+      WWII_USA_D_Day-removebg-preview_46: 825797900
+      WWII_USA_D_Day-removebg-preview_47: 1396149240
+      WWII_USA_D_Day-removebg-preview_48: -1569057931
+      WWII_USA_D_Day-removebg-preview_49: 54698689
+      WWII_USA_D_Day-removebg-preview_5: -1422590675
+      WWII_USA_D_Day-removebg-preview_50: -1154459965
+      WWII_USA_D_Day-removebg-preview_51: -35795648
+      WWII_USA_D_Day-removebg-preview_52: 535474742
+      WWII_USA_D_Day-removebg-preview_53: -437333052
+      WWII_USA_D_Day-removebg-preview_54: 1117406768
+      WWII_USA_D_Day-removebg-preview_55: -1581888205
+      WWII_USA_D_Day-removebg-preview_56: 455779737
+      WWII_USA_D_Day-removebg-preview_57: 1171283973
+      WWII_USA_D_Day-removebg-preview_58: 1954839349
+      WWII_USA_D_Day-removebg-preview_59: 550743638
+      WWII_USA_D_Day-removebg-preview_6: -680403685
+      WWII_USA_D_Day-removebg-preview_60: -1313890514
+      WWII_USA_D_Day-removebg-preview_61: -12619922
+      WWII_USA_D_Day-removebg-preview_62: -656498894
+      WWII_USA_D_Day-removebg-preview_63: 1241380724
+      WWII_USA_D_Day-removebg-preview_64: -778419870
+      WWII_USA_D_Day-removebg-preview_65: -659274991
+      WWII_USA_D_Day-removebg-preview_66: 217919736
+      WWII_USA_D_Day-removebg-preview_67: 2104613959
+      WWII_USA_D_Day-removebg-preview_68: 585347316
+      WWII_USA_D_Day-removebg-preview_69: -1114123421
+      WWII_USA_D_Day-removebg-preview_7: 459558216
+      WWII_USA_D_Day-removebg-preview_70: 1522460338
+      WWII_USA_D_Day-removebg-preview_71: 807240031
+      WWII_USA_D_Day-removebg-preview_72: 685595062
+      WWII_USA_D_Day-removebg-preview_73: 347766271
+      WWII_USA_D_Day-removebg-preview_74: -1411846410
+      WWII_USA_D_Day-removebg-preview_75: -376209116
+      WWII_USA_D_Day-removebg-preview_76: 2086050154
+      WWII_USA_D_Day-removebg-preview_77: 327377615
+      WWII_USA_D_Day-removebg-preview_78: -1912837232
+      WWII_USA_D_Day-removebg-preview_79: 1880127092
+      WWII_USA_D_Day-removebg-preview_8: 828715868
+      WWII_USA_D_Day-removebg-preview_80: 315925639
+      WWII_USA_D_Day-removebg-preview_9: -365766454
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
