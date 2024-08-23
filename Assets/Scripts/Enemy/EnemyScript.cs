@@ -15,6 +15,7 @@ public class EnemyScript : MonoBehaviour
     public float moveSpeed; // Velocidad de movimiento del enemigo
     private bool movingRight = true; // Dirección inicial de movimiento
     private bool isShooting = false;
+    private Animator Animator;
     
 
 
@@ -22,13 +23,15 @@ public class EnemyScript : MonoBehaviour
     {
         startPosition = transform.position.x;
         movingRight = true;
-        
+        Animator = GetComponent<Animator>();
         
     }
     // Update is called once per frame
     void Update()
     {
         if (!Player.activeSelf) return;
+
+        Animator.SetBool("Shooting", isShooting != false);
 
         float distance = Mathf.Abs(Player.transform.position.x - transform.position.x);
 
