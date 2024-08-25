@@ -9,6 +9,7 @@ TagManager:
   - Shotgun
   - Enemy
   - Object
+  - Medikit
   layers:
   - Default
   - TransparentFX

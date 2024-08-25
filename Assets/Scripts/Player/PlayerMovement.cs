@@ -258,7 +258,7 @@ public class PlayerMovement : MonoBehaviour
             SloMoActive = true;
             SloMoStartTime = Time.time;
             Destroy(other.gameObject);
-            Speed = 1.3f;
+            Speed = 1.5f;
             StartCoroutine(ShowTemporaryText(SloMoText, textDuration));
         }
 
@@ -268,6 +268,12 @@ public class PlayerMovement : MonoBehaviour
             ShotgunStartTime = Time.time;
             Destroy(other.gameObject);
             StartCoroutine(ShowTemporaryText(ShotgunText, textDuration));
+        }
+
+        if (other.gameObject.CompareTag("Medikit"))
+        {
+            PlayerHealth.instance.HealPlayer();
+            Destroy(other.gameObject);
         }
 
     }
