@@ -184,11 +184,6 @@ public class UIController : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-
     public void Quit()
     {
         Application.Quit();

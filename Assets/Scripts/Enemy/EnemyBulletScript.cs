@@ -35,6 +35,7 @@ public class EnemyBulletScript : MonoBehaviour
     {
         PlayerHealth player = collision.GetComponent<PlayerHealth>();
         EnemyScript enemy = collision.GetComponent<EnemyScript>();
+        
 
         if (collision.CompareTag("RapidFire"))
         {

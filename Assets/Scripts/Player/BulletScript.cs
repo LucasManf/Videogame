@@ -35,6 +35,7 @@ public class BulletScript : MonoBehaviour
     {
         PlayerHealth player = collision.GetComponent<PlayerHealth>();
         EnemyScript enemy = collision.GetComponent<EnemyScript>();
+        StaticEnemyScript staticEnemy = collision.GetComponent<StaticEnemyScript>();
 
         if (collision.CompareTag("RapidFire"))
         {
@@ -56,6 +57,12 @@ public class BulletScript : MonoBehaviour
             enemy.Hit();
             DestroyBullet();
         }
+        if(staticEnemy != null)
+        {
+            staticEnemy.Hit();
+            DestroyBullet();
+        }
+
         
     }
 
