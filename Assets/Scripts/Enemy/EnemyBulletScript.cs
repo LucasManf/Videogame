@@ -45,6 +45,10 @@ public class EnemyBulletScript : MonoBehaviour
         {
             return;
         }
+        if (collision.CompareTag("Object"))
+        {
+            DestroyBullet();
+        }
     
         if(player != null)
         {
