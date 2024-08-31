@@ -1151,6 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 3326123624401585946, guid: 2c94a3324e1751542ad14de0bab95db8, type: 3}
+  GranadePrefab: {fileID: 0}
   Speed: 1
   JumpForce: 150
   RapidFireText: {fileID: 7020753760817861307, guid: 0fe94a6d7fc26734b9a865c623e92753, type: 3}

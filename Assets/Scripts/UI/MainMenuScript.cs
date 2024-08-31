@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public PlayerMovement playerMovement;
+    [SerializeField] private AudioClip MainMenuSound;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +19,7 @@ public class MainMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /* SoundManager.instance.PlaySound(MainMenuSound); */
     }
 
     public void StartGame()

@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
+/* using Unity.Mathematics; */
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject BulletPrefab;
+    public GameObject GranadePrefab;
     public float Speed;
     public float JumpForce;
     public static PlayerMovement instance;
@@ -35,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     private float ShotgunDuration = 7;
     private bool isShooting = false;
     private bool isPaused = false;
+
+    private int granades = 3;
 
     
 
@@ -277,6 +280,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+/*     private void ThrowGranade()
+    {
+        Vector3 direction;
+        if(transform.localScale.x == 1.0f) direction = Vector2.right;
+        else direction = Vector2.left;
+
+        GameObject bullet = Instantiate(GranadePrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        bullet.GetComponent<GranadeScript>().SetDirection(direction);
+    } */
 
     public void SetPauseState(bool paused)
     {
