@@ -69,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
             Animator.SetBool("Jumping", Grounded != true);
 
 
-            /* Debug.DrawRay(transform.position, Vector3.down * 0.15f, Color.red); */
             if(Physics2D.Raycast(transform.position, Vector3.down, 0.15f))
             {
                 Grounded = true;
