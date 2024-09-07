@@ -280,6 +280,23 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        
+        if (other.gameObject.CompareTag("Dark"))
+        {
+  
+            other.gameObject.SetActive(false);
+        }
+
+        if (!other.gameObject.CompareTag("Dark"))
+        {
+  
+            other.gameObject.SetActive(true);
+        }
+    }
+
 /*     private void ThrowGranade()
     {
         Vector3 direction;

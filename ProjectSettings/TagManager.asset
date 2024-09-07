@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Object
   - Medikit
+  - Dark
   layers:
   - Default
   - TransparentFX
