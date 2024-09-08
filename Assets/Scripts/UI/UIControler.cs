@@ -125,7 +125,7 @@ public class UIController : MonoBehaviour
             break;
 
         default: 
-                 heart1.sprite = heartEmpty;
+                heart1.sprite = heartEmpty;
                 heart2.sprite = heartEmpty;
                 heart3.sprite = heartEmpty;
                 heart4.sprite = heartEmpty;

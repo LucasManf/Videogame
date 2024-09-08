@@ -39,7 +39,9 @@ public class PlayerMovement : MonoBehaviour
 
     private int granades = 3;
 
-    
+    [SerializeField] Collider2D ColisionadorAgachado;
+
+
 
     private void Awake()
     {
@@ -52,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         rapidFireActive = false;
+        Animator.SetBool("Agachado", false);
     }
 
     // Update is called once per frame
@@ -72,6 +75,8 @@ public class PlayerMovement : MonoBehaviour
             if(Physics2D.Raycast(transform.position, Vector3.down, 0.15f))
             {
                 Grounded = true;
+                Animator.SetBool("Jumping", false);
+
             }
             else Grounded = false;
             
@@ -83,6 +88,17 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
             }
 
+            if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) && Grounded && Horizontal == 0.0F)
+            {
+                Animator.SetBool("Agachado", true);
+                ColisionadorAgachado.enabled = false;
+                
+            }
+            else
+            {
+                Animator.SetBool("Agachado", false);
+                ColisionadorAgachado.enabled = true;
+            }
 
             
 
