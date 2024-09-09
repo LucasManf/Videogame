@@ -7271,7 +7271,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.024942786, y: 0.024940103}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7282,7 +7282,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.44, y: 1.44}
+  m_Size: {x: 0.7249922, y: 0.72501945}
   m_EdgeRadius: 0
 --- !u!212 &1073337848
 SpriteRenderer:
@@ -14796,9 +14796,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 2028688431}
+  - {fileID: 876701665}
   - {fileID: 306989416}
   - {fileID: 1306640102}
-  - {fileID: 876701665}
   - {fileID: 643987023}
   - {fileID: 73343348}
   - {fileID: 240592316}

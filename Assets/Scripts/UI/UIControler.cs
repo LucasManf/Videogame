@@ -193,16 +193,19 @@ public class UIController : MonoBehaviour
 #region Pause
     private void PauseGame(bool status)
     {
-        pauseScreen.SetActive(status);
-        PlayerMovement.instance.SetPauseState(status);
-        
-        if(status)
+        if(!gameOverScreen.activeSelf)
         {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
+            pauseScreen.SetActive(status);
+            PlayerMovement.instance.SetPauseState(status);
+            
+            if(status)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
         }
     }
 
