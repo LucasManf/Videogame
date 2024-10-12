@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 /* using Unity.Mathematics; */
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject RapidFireText; // Prefabricado del sprite que deseas mostrar como texto
     public GameObject SloMoText;
     public GameObject ShotgunText;
+    public GameObject Cuadrado;
     public float textDuration = 1f;
     public float TextMovementSpeed = 0.2f; // Velocidad de movimiento hacia arriba
 
@@ -294,23 +296,31 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if (other.gameObject.CompareTag("Dark"))
+        {
+            Cuadrado.gameObject.SetActive(false);
+        }
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            SceneManager.LoadScene(2);
+        }
+        
+
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Dark"))
+        {
+            Cuadrado.gameObject.SetActive(true);
+        }
+    }
     
     private void OnTriggerStay2D(Collider2D other)
     {
         
-        if (other.gameObject.CompareTag("Dark"))
-        {
-  
-            other.gameObject.SetActive(false);
-        }
 
-        if (!other.gameObject.CompareTag("Dark"))
-        {
-  
-            other.gameObject.SetActive(true);
-        }
     }
 
 /*     private void ThrowGranade()

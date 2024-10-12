@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,7 +42,7 @@ public class SelectionArrow : MonoBehaviour
         currentPosition += _change;
         if(_change != 0)
         {
-            /* SoundManager.instance.PlaySound(changeSound); */
+            SoundManager.instance.PlaySFX(changeSound);
         }
 
         if(currentPosition < 0)
@@ -59,8 +60,8 @@ public class SelectionArrow : MonoBehaviour
 
     private void Interact()
     {
-        /* SoundManager.instance.PlaySound(interactSound); */
-
+        SoundManager.instance.PlaySFX(interactSound);
         options[currentPosition].GetComponent<Button>().onClick.Invoke();
     }
+
 }
