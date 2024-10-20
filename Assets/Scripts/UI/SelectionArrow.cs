@@ -40,10 +40,6 @@ public class SelectionArrow : MonoBehaviour
     private void ChangePosition(int _change)
     {
         currentPosition += _change;
-        if(_change != 0)
-        {
-            SoundManager.instance.PlaySFX(changeSound);
-        }
 
         if(currentPosition < 0)
         {
@@ -56,12 +52,17 @@ public class SelectionArrow : MonoBehaviour
 
         //asignar la posicion actual del eje Y a el puntero de seleccion
         rect.position = new Vector3(rect.position.x, options[currentPosition].position.y, 0);
+
+        if(_change != 0)
+        {
+            SoundManager.instance.PlaySFX(changeSound);
+        }
     }
 
     private void Interact()
     {
-        SoundManager.instance.PlaySFX(interactSound);
         options[currentPosition].GetComponent<Button>().onClick.Invoke();
+        SoundManager.instance.PlaySFX(interactSound);
     }
 
 }
