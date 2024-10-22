@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance;
     //El static permite referenciar a la misma clase, en este caso SoundManager
    
+    public AudioSource[] soundEffects;
+
     [Header("Audio Source")]
     [SerializeField] AudioSource musicSrc;
     [SerializeField] AudioSource sfxSrc;
@@ -20,6 +22,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip bckgrd;
     public AudioClip jump;
     public AudioClip fire;
+    public AudioClip changeSound;
+    public AudioClip interactSound;
 
 
     void Awake()
@@ -42,8 +46,8 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(int clip)
     {
-        sfxSrc.PlayOneShot(clip);
+        soundEffects[clip].Play();
     }
 }

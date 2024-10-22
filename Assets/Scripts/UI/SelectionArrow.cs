@@ -55,14 +55,14 @@ public class SelectionArrow : MonoBehaviour
 
         if(_change != 0)
         {
-            SoundManager.instance.PlaySFX(changeSound);
+            SoundManager.instance.PlaySFX(1);
         }
     }
 
     private void Interact()
     {
         options[currentPosition].GetComponent<Button>().onClick.Invoke();
-        SoundManager.instance.PlaySFX(interactSound);
+        SoundManager.instance.PlaySFX(0);
     }
 
 }

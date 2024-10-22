@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
             if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && Grounded)
             {
-
+                SoundManager.instance.PlaySFX(6);
                 Jump();
             }
 
@@ -254,6 +254,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        
         Rigidbody2D.AddForce(Vector2.up * JumpForce);
         Animator.SetBool("Jumping", true);
     }
@@ -286,6 +287,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ShotgunActive = true;
             ShotgunStartTime = Time.time;
+            SoundManager.instance.PlaySFX(4);
             Destroy(other.gameObject);
             StartCoroutine(ShowTemporaryText(ShotgunText, textDuration));
         }
@@ -336,6 +338,14 @@ public class PlayerMovement : MonoBehaviour
     public void SetPauseState(bool paused)
     {
         isPaused = paused;
+    }
+
+    public void StepSound1() {
+        SoundManager.instance.PlaySFX(2);
+    }
+
+    public void StepSound2() {
+        SoundManager.instance.PlaySFX(3);
     }
 
 }
