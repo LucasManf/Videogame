@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ExplosionScript : MonoBehaviour
 {
+    public Collider2D explosionCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +31,9 @@ public class ExplosionScript : MonoBehaviour
     public void DestroyBullet()
     {
         Destroy(gameObject);
+    }
+
+    public void DissableCollider() {
+        explosionCollider.enabled = false;
     }
 }

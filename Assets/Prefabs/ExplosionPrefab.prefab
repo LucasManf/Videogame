@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9006847289826939075}
   - component: {fileID: 3373338877004792187}
   - component: {fileID: 8604822955067681733}
+  - component: {fileID: -4490183766097673732}
   m_Layer: 0
   m_Name: ExplosionPrefab
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.3312, y: 2.0132, z: 0}
-  m_LocalScale: {x: 0.25828984, y: 0.25828984, z: 0.25828984}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,6 +140,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.10873948}
+  m_Offset: {x: 0.01099968, y: -0.02099979}
   serializedVersion: 2
-  m_Radius: 0.5992263
+  m_Radius: 0.37526035
+--- !u!114 &-4490183766097673732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8341749572738058502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86431ee99b53f92428fc8a4dff127362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionCollider: {fileID: 8604822955067681733}
