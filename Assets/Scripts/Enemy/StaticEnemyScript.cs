@@ -6,6 +6,7 @@ public class StaticEnemyScript : MonoBehaviour
 {
     public GameObject EnemyBulletPrefab;
     public GameObject Player;
+    public GameObject deathEffect;
     
     private float LastShoot;
     private int Health = 3;
@@ -47,6 +48,10 @@ public class StaticEnemyScript : MonoBehaviour
     public void Hit()
     {
         Health = Health - 1;
-        if(Health == 0) Destroy(gameObject);
+        if(Health == 0) 
+        {
+            Instantiate(deathEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }

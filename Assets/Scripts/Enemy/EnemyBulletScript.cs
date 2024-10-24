@@ -52,6 +52,8 @@ public class EnemyBulletScript : MonoBehaviour
     
         if(player != null)
         {
+            /* Vector2 hitDirection = transform.position - collision.transform.position;
+            hitDirection.Normalize(); */
             player.DealDamage();
             DestroyBullet();
         }

@@ -6,6 +6,7 @@ public class ExplosionScript : MonoBehaviour
 {
     public Collider2D explosionCollider;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,8 @@ public class ExplosionScript : MonoBehaviour
 
         if(player != null)
         {
+            /* Vector2 hitDirection = transform.position - collision.transform.position;
+            hitDirection.Normalize(); */
             player.DealDamage();
         }
     }
@@ -36,4 +39,5 @@ public class ExplosionScript : MonoBehaviour
     public void DissableCollider() {
         explosionCollider.enabled = false;
     }
+
 }

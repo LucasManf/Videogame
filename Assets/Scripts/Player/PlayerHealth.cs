@@ -8,7 +8,6 @@ public class PlayerHealth : MonoBehaviour
 
     //VARIABLES
     public static PlayerHealth instance;
-
     public int currentHealth, maxHealth;
 
     public float invincibleLenght; 
@@ -17,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     private SpriteRenderer theSR;
 
     public GameObject deathEffect;
+    
     private PlayerRespawn playerRespawn;
     private UIController uiController;
 
@@ -64,6 +64,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 currentHealth = 0;
                 gameObject.SetActive(false);
+                Instantiate(deathEffect, transform.position, transform.rotation);
                 uiController.GameOver();
         
 
@@ -120,5 +121,8 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    
+    public void DeathAnimation(Vector2 hitDirection)
+    {
+
+    }
 }

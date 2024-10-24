@@ -217,6 +217,7 @@ public class PlayerMovement : MonoBehaviour
 
         GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.15f, Quaternion.identity);
         bullet.GetComponent<BulletScript>().SetDirection(direction);
+        /* SoundManager.instance.PlaySFX(7); */
         
     }
 
@@ -319,11 +320,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        
-
-    }
 
 /*     private void ThrowGranade()
     {

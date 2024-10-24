@@ -5,11 +5,13 @@ using UnityEngine;
 public class MortarScript : MonoBehaviour
 {
     public GameObject mortarShellPrefab;
+    public GameObject MortarDeathPrefab;
     public float launchForce = 4.2f;
     public float launchAngle = 45f;
     public GameObject Player;
-    
+
     private float LastShoot;
+    private int Health = 4;
 
     void Update()
     {
@@ -41,5 +43,21 @@ public class MortarScript : MonoBehaviour
 
         // Apply initial velocity
         rb.velocity = new Vector2(xVelocity, yVelocity);
+    }
+
+    
+    public void Hit()
+    {
+        Health = Health - 1;
+        if(Health == 0) 
+        {
+            DestroyMortar();
+        }
+    }
+
+    public void DestroyMortar() 
+    {
+        Instantiate(MortarDeathPrefab, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }
