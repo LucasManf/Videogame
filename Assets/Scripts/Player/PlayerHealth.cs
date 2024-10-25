@@ -60,9 +60,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth--;
         UIController.instance.UpdateHealthDisplay();
 
-            if(currentHealth <= 0)
+            if(currentHealth == 0)
             {
-                currentHealth = 0;
                 gameObject.SetActive(false);
                 Instantiate(deathEffect, transform.position, transform.rotation);
                 uiController.GameOver();
