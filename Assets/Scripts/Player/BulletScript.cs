@@ -13,6 +13,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        /* SoundManager.instance.PlaySFX(7); */
     }
 
     // Update is called once per frame
@@ -68,8 +69,11 @@ public class BulletScript : MonoBehaviour
             mortar.Hit();
             DestroyBullet();
         }
+    }
 
-        
+    public void PlayShotSound()
+    {
+        SoundManager.instance.PlaySFX(7);
     }
 
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6503892186379536000}
   - component: {fileID: 4575543460681143401}
   - component: {fileID: 5616756241522579058}
-  - component: {fileID: -2928522633232255404}
+  - component: {fileID: -7648043993590322694}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -185,19 +185,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.04
---- !u!82 &-2928522633232255404
+--- !u!82 &-7648043993590322694
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3326123624401585946}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9cb3b040c3300fb4b9c1ecd6407f756c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.31
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
