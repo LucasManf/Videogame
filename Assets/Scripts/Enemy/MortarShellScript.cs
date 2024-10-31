@@ -6,7 +6,6 @@ public class MortarShellScript : MonoBehaviour
 {
     public float Speed;
     public GameObject ExplosionPrefab;
-
     private Rigidbody2D Rigidbody2D;
     private Vector2 Direction;
 

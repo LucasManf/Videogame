@@ -11,6 +11,7 @@ TagManager:
   - Object
   - Medikit
   - Dark
+  - Ground
   layers:
   - Default
   - TransparentFX

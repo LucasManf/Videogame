@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject BulletPrefab;
-    public GameObject GranadePrefab;
+    public GameObject GrenadePrefab;
     public float Speed;
     public float JumpForce;
     public static PlayerMovement instance;
@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject RapidFireText; // Prefabricado del sprite que deseas mostrar como texto
     public GameObject SloMoText;
     public GameObject ShotgunText;
+
+
     public GameObject Cuadrado;
     public float textDuration = 1f;
     public float TextMovementSpeed = 0.2f; // Velocidad de movimiento hacia arriba
@@ -39,7 +41,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isShooting = false;
     private bool isPaused = false;
 
-    private int granades = 3;
+    private int grenades;
+    public float launchForce = 3.9f;
+    public float launchAngle = 45f;
 
     [SerializeField] Collider2D ColisionadorAgachado;
 
@@ -57,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
         Animator = GetComponent<Animator>();
         rapidFireActive = false;
         Animator.SetBool("Agachado", false);
+        grenades = 3;
     }
 
     // Update is called once per frame
@@ -176,6 +181,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 ShotgunActive = false;
                 Speed = 1;
+            }
+
+            if(Input.GetKeyDown(KeyCode.E) && Time.time > LastShoot + 0.80f && grenades != 0)
+            {
+                
+                Animator.SetBool("Grenade", true);
+                grenades--;
+                LastShoot = Time.time;
             }
         }
     }
@@ -321,15 +334,22 @@ public class PlayerMovement : MonoBehaviour
     }
     
 
-/*     private void ThrowGranade()
+    public void ThrowGrenade()
     {
-        Vector3 direction;
-        if(transform.localScale.x == 1.0f) direction = Vector2.right;
-        else direction = Vector2.left;
+        
+        GameObject grenade = Instantiate(GrenadePrefab, transform.position, Quaternion.identity);
+        Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
 
-        GameObject bullet = Instantiate(GranadePrefab, transform.position + direction * 0.1f, Quaternion.identity);
-        bullet.GetComponent<GranadeScript>().SetDirection(direction);
-    } */
+        Vector2 facingDirection = transform.localScale.x < 0 ? Vector2.right : Vector2.left;
+
+        // Calculate launch velocity components
+        float radians = launchAngle * Mathf.Deg2Rad;
+        float xVelocity = -launchForce * Mathf.Cos(radians) * facingDirection.x;;
+        float yVelocity = launchForce * Mathf.Sin(radians);
+
+        // Apply initial velocity
+        rb.velocity = new Vector2(xVelocity, yVelocity);
+    }
 
     public void SetPauseState(bool paused)
     {
@@ -342,6 +362,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void StepSound2() {
         SoundManager.instance.PlaySFX(3);
+    }
+
+    public void GrenadeAnimationEnd()
+    {
+        Animator.SetBool("Grenade", false);
     }
 
 }
