@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 11046455}
   - component: {fileID: 11046454}
   m_Layer: 0
-  m_Name: G
+  m_Name: E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,12 +200,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11046453}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.235, y: 2.341, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.73047, y: -4.244, z: 0.12018116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 921887728}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &56997197
 GameObject:
@@ -1335,6 +1335,11 @@ MonoBehaviour:
   heart5: {fileID: 456683251}
   heartFull: {fileID: 682373812, guid: e163c323eca20f94c9363fd13c5d7468, type: 3}
   heartEmpty: {fileID: 594589788, guid: e163c323eca20f94c9363fd13c5d7468, type: 3}
+  grenade1: {fileID: 0}
+  grenade2: {fileID: 0}
+  grenade3: {fileID: 0}
+  grenadeFull: {fileID: 1874180074, guid: b5efcc50aac86a94193d21d3daec8bab, type: 3}
+  grenadeEmpty: {fileID: 0}
   gemText: {fileID: 0}
   fadeScreen: {fileID: 0}
   fadeSpeed: 0
@@ -2790,12 +2795,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748715292}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.299, y: 2.355, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.19647, y: -4.23, z: 0.12018116}
   m_LocalScale: {x: 0.23314017, y: 0.23314017, z: 0.23314017}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 921887728}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &755729910
 GameObject:
@@ -3375,6 +3380,8 @@ Transform:
   - {fileID: 1354924419}
   - {fileID: 572506165}
   - {fileID: 1416461018}
+  - {fileID: 748715294}
+  - {fileID: 11046455}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &936799982
@@ -5177,6 +5184,7 @@ Transform:
   - {fileID: 1766102099}
   - {fileID: 846491921}
   - {fileID: 463451851}
+  - {fileID: 1920372535}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416461016
@@ -6994,12 +7002,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920372533}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.674, y: 1.95, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.1785297, y: -4.3942785, z: 0.12018116}
   m_LocalScale: {x: -0.04356255, y: 0.043562546, z: 0.043562546}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1406803946}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1920372536
 EdgeCollider2D:
@@ -7532,6 +7540,7 @@ MonoBehaviour:
   Cuadrado: {fileID: 0}
   textDuration: 1
   TextMovementSpeed: 0.2
+  grenades: 0
   launchForce: 3.9
   launchAngle: 45
   ColisionadorAgachado: {fileID: 1954848277}
@@ -8609,6 +8618,3 @@ SceneRoots:
   - {fileID: 729048990}
   - {fileID: 1238215100}
   - {fileID: 2006749744}
-  - {fileID: 1920372535}
-  - {fileID: 748715294}
-  - {fileID: 11046455}

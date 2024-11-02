@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour
     [Header ("Health UI")]
     public UnityEngine.UI.Image heart1, heart2, heart3, heart4, heart5;
     public Sprite heartFull, heartEmpty;
+    public UnityEngine.UI.Image grenade1, grenade2, grenade3;
+    public Sprite grenadeFull, grenadeEmpty;
 
     public Text gemText;
     public Image fadeScreen;
@@ -134,6 +136,45 @@ public class UIController : MonoBehaviour
 
       }
 
+
+    }
+#endregion
+
+#region GrenadeDisplay
+    public void UpdateGrenadeDisplay(){
+
+      switch(PlayerMovement.instance.grenades){
+
+        case 3: 
+                grenade1.sprite = grenadeFull;
+                grenade2.sprite = grenadeFull;
+                grenade2.sprite = grenadeFull;
+            break;
+
+        case 2: 
+                grenade1.sprite = grenadeFull;
+                grenade2.sprite = grenadeFull;
+                grenade2.sprite = grenadeEmpty;
+            break;
+
+        case 1: 
+                grenade1.sprite = grenadeFull;
+                grenade2.sprite = grenadeEmpty;
+                grenade2.sprite = grenadeEmpty;
+            break;
+
+        case 0: 
+                grenade1.sprite = grenadeEmpty;
+                grenade2.sprite = grenadeEmpty;
+                grenade2.sprite = grenadeEmpty;
+            break;
+
+        default: 
+                grenade1.sprite = grenadeFull;
+                grenade2.sprite = grenadeFull;
+                grenade2.sprite = grenadeFull;
+                break;
+      }
 
     }
 #endregion

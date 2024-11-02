@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isShooting = false;
     private bool isPaused = false;
 
-    private int grenades;
+    public int grenades;
     public float launchForce = 3.9f;
     public float launchAngle = 45f;
 
@@ -189,6 +189,7 @@ public class PlayerMovement : MonoBehaviour
                 Animator.SetBool("Grenade", true);
                 grenades--;
                 LastShoot = Time.time;
+                UIController.instance.UpdateGrenadeDisplay();
             }
         }
     }
