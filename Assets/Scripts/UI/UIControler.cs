@@ -8,7 +8,7 @@ public class UIController : MonoBehaviour
 {
     public static UIController instance;
 
-    [Header ("Health UI")]
+    [Header("Health UI")]
     public UnityEngine.UI.Image heart1, heart2, heart3, heart4, heart5;
     public Sprite heartFull, heartEmpty;
     public UnityEngine.UI.Image grenade1, grenade2, grenade3;
@@ -21,16 +21,17 @@ public class UIController : MonoBehaviour
 
     private bool shouldFadeToBlack, shouldFadeFromBlack;
 
-    [Header ("Game Over")]
+    [Header("Game Over")]
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private AudioClip gameOverSound;
 
-    [Header ("Pause")]
+    [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
 
-    private void Awake(){
+    private void Awake()
+    {
 
-    instance = this;
+        instance = this;
 
     }
     // Start is called before the first frame update
@@ -45,28 +46,32 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(shouldFadeToBlack){
 
-            fadeScreen.color = new Color(fadeScreen.color.r,fadeScreen.color.g,fadeScreen.color.b,Mathf.MoveTowards(fadeScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
-            if(fadeScreen.color.a == 1f){
+        if (shouldFadeToBlack)
+        {
+
+            fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
+            if (fadeScreen.color.a == 1f)
+            {
                 shouldFadeToBlack = false;
 
-                }
+            }
         }
-        if(shouldFadeFromBlack){
+        if (shouldFadeFromBlack)
+        {
 
-            fadeScreen.color = new Color(fadeScreen.color.r,fadeScreen.color.g,fadeScreen.color.b,Mathf.MoveTowards(fadeScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
-            if(fadeScreen.color.a == 0f){
-                
+            fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
+            if (fadeScreen.color.a == 0f)
+            {
+
                 shouldFadeToBlack = false;
 
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(pauseScreen.activeInHierarchy)
+            if (pauseScreen.activeInHierarchy)
             {
                 PauseGame(false);
             }
@@ -77,56 +82,54 @@ public class UIController : MonoBehaviour
         }
     }
 
-#region HealthDisplay
-    public void UpdateHealthDisplay(){
+    #region HealthDisplay
+    public void UpdateHealthDisplay()
+    {
 
-      switch(PlayerHealth.instance.currentHealth){
+        switch (PlayerHealth.instance.currentHealth)
+        {
 
-        case 5:
+            case 5:
                 heart1.sprite = heartFull;
                 heart2.sprite = heartFull;
                 heart3.sprite = heartFull;
                 heart4.sprite = heartFull;
                 heart5.sprite = heartFull;
-            break;
+                break;
 
-        case 4:
+            case 4:
                 heart1.sprite = heartFull;
                 heart2.sprite = heartFull;
                 heart3.sprite = heartFull;
                 heart4.sprite = heartFull;
                 heart5.sprite = heartEmpty;
-            break;
+                break;
 
-        case 3: heart1.sprite = heartFull;
+            case 3:
+                heart1.sprite = heartFull;
                 heart2.sprite = heartFull;
                 heart3.sprite = heartFull;
                 heart4.sprite = heartEmpty;
                 heart5.sprite = heartEmpty;
-            break;
+                break;
 
-        case 2: heart1.sprite = heartFull;
+            case 2:
+                heart1.sprite = heartFull;
                 heart2.sprite = heartFull;
                 heart3.sprite = heartEmpty;
                 heart4.sprite = heartEmpty;
                 heart5.sprite = heartEmpty;
-            break;
+                break;
 
-        case 1: heart1.sprite = heartFull;
+            case 1:
+                heart1.sprite = heartFull;
                 heart2.sprite = heartEmpty;
                 heart3.sprite = heartEmpty;
                 heart4.sprite = heartEmpty;
                 heart5.sprite = heartEmpty;
-            break;
+                break;
 
-        case 0: heart1.sprite = heartEmpty;
-                heart2.sprite = heartEmpty;
-                heart3.sprite = heartEmpty;
-                heart4.sprite = heartEmpty;
-                heart5.sprite = heartEmpty;
-            break;
-
-        default: 
+            case 0:
                 heart1.sprite = heartEmpty;
                 heart2.sprite = heartEmpty;
                 heart3.sprite = heartEmpty;
@@ -134,50 +137,87 @@ public class UIController : MonoBehaviour
                 heart5.sprite = heartEmpty;
                 break;
 
-      }
+            default:
+                heart1.sprite = heartEmpty;
+                heart2.sprite = heartEmpty;
+                heart3.sprite = heartEmpty;
+                heart4.sprite = heartEmpty;
+                heart5.sprite = heartEmpty;
+                break;
+
+        }
 
 
     }
-#endregion
+    #endregion
 
-#region GrenadeDisplay
-    public void UpdateGrenadeDisplay(){
+    #region GrenadeDisplay
+    public void UpdateGrenadeDisplay()
+    {
 
-      switch(PlayerMovement.instance.grenades){
+        switch (PlayerMovement.instance.grenades)
+        {
 
-        case 3: 
+            case 3:
                 grenade1.sprite = grenadeFull;
                 grenade2.sprite = grenadeFull;
                 grenade2.sprite = grenadeFull;
-            break;
 
-        case 2: 
+                SetGrenadeTransparency(grenade1, 1f);
+                SetGrenadeTransparency(grenade2, 1f);
+                SetGrenadeTransparency(grenade3, 1f);
+                break;
+
+            case 2:
                 grenade1.sprite = grenadeFull;
                 grenade2.sprite = grenadeFull;
                 grenade2.sprite = grenadeEmpty;
-            break;
 
-        case 1: 
+                SetGrenadeTransparency(grenade1, 1f);
+                SetGrenadeTransparency(grenade2, 1f);
+                SetGrenadeTransparency(grenade3, 0.5f);
+                break;
+
+            case 1:
                 grenade1.sprite = grenadeFull;
                 grenade2.sprite = grenadeEmpty;
                 grenade2.sprite = grenadeEmpty;
-            break;
 
-        case 0: 
+                SetGrenadeTransparency(grenade1, 1f);
+                SetGrenadeTransparency(grenade2, 0.5f);
+                SetGrenadeTransparency(grenade3, 0.5f);
+                break;
+
+            case 0:
                 grenade1.sprite = grenadeEmpty;
                 grenade2.sprite = grenadeEmpty;
                 grenade2.sprite = grenadeEmpty;
-            break;
 
-        default: 
+                SetGrenadeTransparency(grenade1, 0.5f);
+                SetGrenadeTransparency(grenade2, 0.5f);
+                SetGrenadeTransparency(grenade3, 0.5f);
+                break;
+
+            default:
                 grenade1.sprite = grenadeFull;
                 grenade2.sprite = grenadeFull;
                 grenade2.sprite = grenadeFull;
+
+                SetGrenadeTransparency(grenade1, 1f);
+                SetGrenadeTransparency(grenade2, 1f);
+                SetGrenadeTransparency(grenade3, 1f);
                 break;
-      }
+        }
 
     }
-#endregion
+
+    private void SetGrenadeTransparency(Image grenadeImage, float alpha)
+    {
+        Color color = grenadeImage.color;
+        color.a = alpha; // Modifica el valor del canal alfa.
+        grenadeImage.color = color;
+    }
+    #endregion
 
 
     /* public void UpdateGemCount(){
@@ -186,14 +226,16 @@ public class UIController : MonoBehaviour
 
     } */
 
-    public void FadeToBlack(){
+    public void FadeToBlack()
+    {
 
         shouldFadeToBlack = true;
         shouldFadeFromBlack = false;
 
     }
 
-    public void FadeFromBlack(){
+    public void FadeFromBlack()
+    {
 
         shouldFadeFromBlack = true;
         shouldFadeToBlack = false;
@@ -201,7 +243,7 @@ public class UIController : MonoBehaviour
     }
 
 
-#region GAME OVER
+    #region GAME OVER
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
@@ -213,7 +255,7 @@ public class UIController : MonoBehaviour
     //Game Over functions
     public void Restart()
     {
-        if(Time.timeScale == 0)
+        if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
         }
@@ -229,17 +271,17 @@ public class UIController : MonoBehaviour
     {
         Application.Quit();
     }
-#endregion
+    #endregion
 
-#region Pause
+    #region Pause
     private void PauseGame(bool status)
     {
-        if(!gameOverScreen.activeSelf)
+        if (!gameOverScreen.activeSelf)
         {
             pauseScreen.SetActive(status);
             PlayerMovement.instance.SetPauseState(status);
-            
-            if(status)
+
+            if (status)
             {
                 Time.timeScale = 0;
             }
@@ -256,6 +298,8 @@ public class UIController : MonoBehaviour
         Time.timeScale = 1;
         PlayerMovement.instance.SetPauseState(false);
     }
-#endregion
+    #endregion
+
+    
 
 }

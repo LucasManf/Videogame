@@ -25,6 +25,7 @@ public class ExplosionScript : MonoBehaviour
         EnemyScript enemy = collision.GetComponent<EnemyScript>();
         StaticEnemyScript staticEnemy = collision.GetComponent<StaticEnemyScript>();
         MortarScript mortar = collision.GetComponent<MortarScript>();
+        TankScript tank = collision.GetComponent<TankScript>();
 
         if(player != null)
         {
@@ -48,6 +49,10 @@ public class ExplosionScript : MonoBehaviour
         if(mortar != null)
         {
             mortar.Hit();
+        }
+        if(tank != null)
+        {
+            tank.TakeHit();
         }
     }
 

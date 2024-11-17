@@ -30,11 +30,17 @@ public class GranadeScript : MonoBehaviour
         }
 
         EnemyScript enemy = collision.GetComponent<EnemyScript>();
+        TankScript tank = collision.GetComponent<TankScript>();
 
 
         if(enemy != null)
         {
 
+            Instantiate(ExplosionPrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        if(tank != null)
+        {
             Instantiate(ExplosionPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
