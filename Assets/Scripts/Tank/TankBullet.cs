@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,14 +30,10 @@ public class TankBullet : MonoBehaviour
             Destroy(gameObject);
 
         }
+    }
 
-        if(other.tag == "StopBullet")
-        {
-            Destroy(gameObject);
-        }
-
-
-
-
+    public void DestroyBullet()
+    {
+        Destroy(gameObject);
     }
 }

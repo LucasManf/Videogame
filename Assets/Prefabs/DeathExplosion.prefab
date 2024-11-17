@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2438581112330369909}
   - component: {fileID: 5501395484355082377}
   m_Layer: 0
-  m_Name: MortarDeath
+  m_Name: DeathExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

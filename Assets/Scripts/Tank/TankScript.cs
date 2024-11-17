@@ -171,8 +171,7 @@ public class TankScript : MonoBehaviour
 
         if (health <= 0)
         {
-            gameObject.SetActive(false);
-            /* isDefeated = true; */
+            isDefeated = true;
 
         }
 
