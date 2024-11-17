@@ -12,7 +12,7 @@ TagManager:
   - Medikit
   - Dark
   - Ground
-  - StopBullet
+  - DmgCollider
   layers:
   - Default
   - TransparentFX
