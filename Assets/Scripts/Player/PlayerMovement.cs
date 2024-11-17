@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+
 /* using Unity.Mathematics; */
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -46,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     public float launchAngle = 45f;
 
     [SerializeField] Collider2D ColisionadorAgachado;
+    [SerializeField] Material material;
 
 
 
@@ -305,6 +308,7 @@ public class PlayerMovement : MonoBehaviour
             SoundManager.instance.PlaySFX(4);
             Destroy(other.gameObject);
             StartCoroutine(ShowTemporaryText(ShotgunText, textDuration));
+            /* this.GetComponent<Renderer>().material = material; */
         }
 
         if (other.gameObject.CompareTag("Medikit"))
@@ -322,8 +326,6 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
-        
-
     }
 
     private void OnTriggerExit2D(Collider2D other)

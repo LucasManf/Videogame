@@ -12,6 +12,7 @@ TagManager:
   - Medikit
   - Dark
   - Ground
+  - StopBullet
   layers:
   - Default
   - TransparentFX
