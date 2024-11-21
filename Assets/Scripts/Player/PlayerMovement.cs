@@ -326,6 +326,10 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+        if (other.gameObject.CompareTag("Finish2"))
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)

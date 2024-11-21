@@ -13,6 +13,7 @@ TagManager:
   - Dark
   - Ground
   - DmgCollider
+  - Finish2
   layers:
   - Default
   - TransparentFX

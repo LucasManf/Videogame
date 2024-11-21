@@ -39,7 +39,7 @@ public class TankScript : MonoBehaviour
     private bool isDefeated;
 
 
-
+    public GameObject flag;
 
 
 
@@ -95,6 +95,7 @@ public class TankScript : MonoBehaviour
 
                             tank.gameObject.SetActive(false);
                             Instantiate(explosion, tank.position, tank.rotation);
+                            flag.SetActive(true);
 
                             //SoundManager.instance.StopBossMusic();
                             currentStates = bossStates.ended;
