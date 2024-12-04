@@ -39,6 +39,7 @@ public class BulletScript : MonoBehaviour
         StaticEnemyScript staticEnemy = collision.GetComponent<StaticEnemyScript>();
         MortarScript mortar = collision.GetComponent<MortarScript>();
         TankScript tank = collision.GetComponent<TankScript>();
+        FinalBossScript finalBoss = collision.GetComponent<FinalBossScript>();
 
 
         if (collision.CompareTag("RapidFire"))
@@ -74,6 +75,11 @@ public class BulletScript : MonoBehaviour
         if(tank != null)
         {
             tank.TakeHit();
+            DestroyBullet();
+        }
+        if(finalBoss != null)
+        {
+            finalBoss.Hit();
             DestroyBullet();
         }
     }
