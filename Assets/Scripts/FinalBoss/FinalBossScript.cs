@@ -8,11 +8,12 @@ public class FinalBossScript : MonoBehaviour
     public bossStates currentStates;
 
     public GameObject EnemyBulletPrefab;
+    public GameObject MissilePrefab;
     public GameObject Player;
     public GameObject deathEffect;
 
     private float LastShoot;
-    private int Health = 15;
+    public int Health = 15;
     private bool isShooting = false;
     private Animator Animator;
 
@@ -58,7 +59,7 @@ public class FinalBossScript : MonoBehaviour
                 if (hitsReceived >= 2) // Moverse después de recibir 2 golpes
                 {
                     currentStates = bossStates.moving;  // Cambia al estado de movimiento
-                    hitBox.enabled = false;  // Inmunidad durante el movimiento
+                    /* hitBox.enabled = false;  */ // Inmunidad durante el movimiento
                     hitsReceived = 0; // Reseteamos el contador de golpes después de moverse
                 }
                 break;
@@ -108,34 +109,34 @@ public class FinalBossScript : MonoBehaviour
     }
 
     private IEnumerator SpecialAttack()
+{
+    // Dirección base según la escala del jefe
+    Vector2 baseDirection = transform.localScale.x > 0 ? Vector2.left : Vector2.right; // Derecha si escala x > 0, izquierda si x < 0
+    float[] angles = { 0, 15, 30, 45 }; // Ángulos de disparo
+
+    for (int i = 0; i < angles.Length; i++)
     {
-        // Dirección base
-        Vector2 baseDirection = transform.localScale.x == 1.0f ? Vector2.right : Vector2.left;
-        float[] angles = { 0, 15, 30, 45 }; // Ángulos de disparo
+        // Calcular la dirección ajustada con el ángulo
+        Vector2 shootDirection = Quaternion.Euler(0, 0, angles[i] * (baseDirection.x > 0 ? 1 : -1)) * baseDirection;
 
-        for (int i = 0; i < angles.Length; i++)
+        // Disparar dos balas por cada ángulo
+        for (int j = 0; j < 2; j++)
         {
-            // Calcular la dirección ajustada con el ángulo
-            Vector2 shootDirection = Quaternion.Euler(0, 0, angles[i] * (baseDirection.x > 0 ? 1 : -1)) * baseDirection;
+            // Crear la bala
+            GameObject bullet = Instantiate(EnemyBulletPrefab, transform.position + (Vector3)baseDirection * 0.1f, Quaternion.identity);
+            bullet.transform.localScale = new Vector3(-1, 1, 1); // Invertir la escala según la dirección
+            bullet.GetComponent<EnemyBulletScript>().SetDirection(shootDirection);
 
-            // Disparar dos balas por cada ángulo
-            for (int j = 0; j < 2; j++)
-            {
-                // Crear la bala
-                GameObject bullet = Instantiate(EnemyBulletPrefab, transform.position + (Vector3)baseDirection * 0.1f, Quaternion.identity);
-                bullet.transform.localScale = new Vector3(-1, 1, 1); // Invertir la escala según la dirección
-                bullet.GetComponent<EnemyBulletScript>().SetDirection(shootDirection);
-
-                // Esperar antes de disparar la siguiente bala
-                yield return new WaitForSeconds(0.1f);
-            }
-
-            // Esperar antes de disparar las siguientes balas
-            yield return new WaitForSeconds(0.2f);
+            // Esperar antes de disparar la siguiente bala
+            yield return new WaitForSeconds(0.1f);
         }
 
-        isShooting = false; // Se pone a false cuando termina de disparar
+        // Esperar antes de disparar las siguientes balas
+        yield return new WaitForSeconds(0.2f);
     }
+
+    isShooting = false; // Se pone a false cuando termina de disparar
+}
 
     public void Hit()
     {
@@ -157,6 +158,33 @@ public class FinalBossScript : MonoBehaviour
     {
         Animator.SetBool("Walking", false);
         currentStates = bossStates.shooting; // Después de moverse, volvemos al estado de disparo
-        hitBox.enabled = true; // Habilitamos la colisión nuevamente
+        /* hitBox.enabled = true;  */// Habilitamos la colisión nuevamente
+    }
+
+    public void MissileAttack()
+    {
+        // Altura fija sobre el jefe
+        float heightOffset = 8.5f;
+
+        // Objeto a instanciar
+        GameObject prefab = MissilePrefab;
+
+        // Calcula la posición sobre el jefe
+        Vector3 spawnPosition = transform.position + new Vector3(0f, heightOffset, 0f);
+
+        Quaternion spawnRotation = Quaternion.Euler(0f, 0f, -90f);
+
+        // Instancia el prefab con la rotación especificada
+        Instantiate(prefab, spawnPosition, spawnRotation);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        PlayerHealth player = other.GetComponent<PlayerHealth>();
+
+        if(player != null)
+        {
+            player.DealDamage();
+        }
     }
 }

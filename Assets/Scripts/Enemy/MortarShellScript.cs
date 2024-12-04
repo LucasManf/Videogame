@@ -23,6 +23,11 @@ public class MortarShellScript : MonoBehaviour
         {
             return; // No explotar si colisiona con el mortero
         }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Instantiate(ExplosionPrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
 
         PlayerHealth player = collision.GetComponent<PlayerHealth>();
         
