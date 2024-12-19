@@ -43,6 +43,7 @@ public class StaticEnemyScript : MonoBehaviour
         GameObject bullet = Instantiate(EnemyBulletPrefab, transform.position + direction * 0.2f, Quaternion.identity);
         bullet.transform.localScale = new Vector3(-1, 1, 1);
         bullet.GetComponent<EnemyBulletScript>().SetDirection(direction);
+        SoundManager.instance.PlaySFX(8);
     }
 
     public void Hit()

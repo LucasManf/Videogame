@@ -26,11 +26,10 @@ public class ExplosionScript : MonoBehaviour
         StaticEnemyScript staticEnemy = collision.GetComponent<StaticEnemyScript>();
         MortarScript mortar = collision.GetComponent<MortarScript>();
         TankScript tank = collision.GetComponent<TankScript>();
+        FinalBossScript finalBoss = collision.GetComponent<FinalBossScript>();
 
         if(player != null)
         {
-            /* Vector2 hitDirection = transform.position - collision.transform.position;
-            hitDirection.Normalize(); */
             player.DealDamage();
         }
 
@@ -50,9 +49,15 @@ public class ExplosionScript : MonoBehaviour
         {
             mortar.Hit();
         }
+
         if(tank != null)
         {
             tank.TakeHit();
+        }
+        
+        if(finalBoss != null)
+        {
+            finalBoss.Hit();
         }
     }
 

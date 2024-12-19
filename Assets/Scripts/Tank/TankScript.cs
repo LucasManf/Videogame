@@ -84,15 +84,13 @@ public class TankScript : MonoBehaviour
 
                 if (hurtCounter > 0)
                 {
+                    hitBox.enabled = false;
 
                     hurtCounter -= Time.deltaTime;
 
                     if (hurtCounter <= 0)
                     {
-
-
                         currentStates = bossStates.moving;
-                        hitBox.enabled = false;
 
                         if (isDefeated)
                         {

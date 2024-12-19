@@ -23,7 +23,7 @@ public class FinalBossScript : MonoBehaviour
     // Movimiento
     public float moveSpeed;
     public Transform leftPoint, rightPoint;
-    private bool moveRight = true; // Empezamos moviéndonos a la derecha
+    private bool moveRight = true;
 
     // Estado de daño
     private int hitsReceived = 0; // Contador de golpes
@@ -32,13 +32,13 @@ public class FinalBossScript : MonoBehaviour
 
     public Transform boss;
 
-    private Coroutine currentAttackCoroutine; // Para almacenar la referencia de la corutina de disparo
+    private Coroutine currentAttackCoroutine;
 
     private bool isDefeated;
 
     void Start()
     {
-        currentStates = bossStates.shooting; // El estado inicial es "shooting"
+        currentStates = bossStates.shooting;
         Animator = GetComponent<Animator>();
         maxHealth = health;
     }
@@ -60,14 +60,13 @@ public class FinalBossScript : MonoBehaviour
                 if (Time.time > LastShoot + 3f && currentStates == bossStates.shooting) // Solo dispara si no está moviéndose
                 {
                     isShooting = true;
-                    currentAttackCoroutine = StartCoroutine(SpecialAttack());  // Iniciar la corutina de disparo
+                    currentAttackCoroutine = StartCoroutine(SpecialAttack());
                     LastShoot = Time.time;
                 }
 
                 if (hitsReceived >= 2) // Moverse después de recibir 2 golpes
                 {
-                    currentStates = bossStates.moving;  // Cambia al estado de movimiento
-                    /* hitBox.enabled = false;  */ // Inmunidad durante el movimiento
+                    currentStates = bossStates.moving;
                     hitsReceived = 0; // Reseteamos el contador de golpes después de moverse
                 }
                 break;
@@ -92,11 +91,11 @@ public class FinalBossScript : MonoBehaviour
     private void Move()
     {
         Animator.SetBool("Walking", true);
-        // Si el jefe se está moviendo, cancela cualquier disparo en curso
+        // Si el jefe se está moviendo, cancela el disparo
         if (currentAttackCoroutine != null)
         {
-            StopCoroutine(currentAttackCoroutine); // Detenemos la corutina de disparo
-            isShooting = false; // Aseguramos que no se siga disparando
+            StopCoroutine(currentAttackCoroutine);
+            isShooting = false;
         }
 
         // Determinamos si el jefe debe moverse hacia la derecha o hacia la izquierda
@@ -136,7 +135,6 @@ public class FinalBossScript : MonoBehaviour
             // Disparar dos balas por cada ángulo
             for (int j = 0; j < 2; j++)
             {
-                // Crear la bala
                 GameObject bullet = Instantiate(EnemyBulletPrefab, transform.position + (Vector3)baseDirection * 0.1f, Quaternion.identity);
                 bullet.transform.localScale = new Vector3(-1, 1, 1); // Invertir la escala según la dirección
                 bullet.GetComponent<EnemyBulletScript>().SetDirection(shootDirection);
@@ -145,7 +143,7 @@ public class FinalBossScript : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
 
-            // Esperar antes de disparar las siguientes balas
+            // Esperar antes de disparar las siguientes 2 balas
             yield return new WaitForSeconds(0.2f);
         }
 

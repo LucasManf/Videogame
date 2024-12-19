@@ -61,4 +61,10 @@ public class EnemyBulletScript : MonoBehaviour
         
     }
 
+    public void PlayShotSound()
+    {
+        SoundManager.instance.PlaySFX(7);
+    }
+
+
 }

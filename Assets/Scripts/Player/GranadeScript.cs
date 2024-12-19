@@ -28,6 +28,10 @@ public class GranadeScript : MonoBehaviour
         {
             return; // No explotar si colisiona con el jugador
         }
+        if(collision.CompareTag("BossFight"))
+        {
+            return;
+        }
 
         EnemyScript enemy = collision.GetComponent<EnemyScript>();
         TankScript tank = collision.GetComponent<TankScript>();
