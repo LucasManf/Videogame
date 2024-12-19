@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Collider2D ColisionadorAgachado;
     [SerializeField] Material material;
 
+    public GameObject bossHealthBar;
+
 
 
     private void Awake()
@@ -330,6 +332,11 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(3);
         }
+        if (other.gameObject.CompareTag("BossFight"))
+        {
+            bossHealthBar.gameObject.SetActive(true);
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)

@@ -31,4 +31,19 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Level2()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void Level3()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void BackButton()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

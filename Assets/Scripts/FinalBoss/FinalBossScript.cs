@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FinalBossScript : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class FinalBossScript : MonoBehaviour
     public GameObject deathEffect;
 
     private float LastShoot;
-    public int Health = 15;
+    public int health = 15;
+    public float maxHealth;
+    public Image healthBar;
     private bool isShooting = false;
     private Animator Animator;
 
@@ -31,15 +34,20 @@ public class FinalBossScript : MonoBehaviour
 
     private Coroutine currentAttackCoroutine; // Para almacenar la referencia de la corutina de disparo
 
+    private bool isDefeated;
+
     void Start()
     {
         currentStates = bossStates.shooting; // El estado inicial es "shooting"
         Animator = GetComponent<Animator>();
+        maxHealth = health;
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+
         if (!Player.activeSelf) return;
 
         Animator.SetBool("Shooting", isShooting != false);
@@ -72,6 +80,12 @@ public class FinalBossScript : MonoBehaviour
             case bossStates.ended:
                 // Lógica cuando el jefe es derrotado
                 break;
+        }
+
+        if(isDefeated)
+        {
+            Instantiate(deathEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 
@@ -109,34 +123,34 @@ public class FinalBossScript : MonoBehaviour
     }
 
     private IEnumerator SpecialAttack()
-{
-    // Dirección base según la escala del jefe
-    Vector2 baseDirection = transform.localScale.x > 0 ? Vector2.left : Vector2.right; // Derecha si escala x > 0, izquierda si x < 0
-    float[] angles = { 0, 15, 30, 45 }; // Ángulos de disparo
-
-    for (int i = 0; i < angles.Length; i++)
     {
-        // Calcular la dirección ajustada con el ángulo
-        Vector2 shootDirection = Quaternion.Euler(0, 0, angles[i] * (baseDirection.x > 0 ? 1 : -1)) * baseDirection;
+        // Dirección base según la escala del jefe
+        Vector2 baseDirection = transform.localScale.x > 0 ? Vector2.left : Vector2.right; // Derecha si escala x > 0, izquierda si x < 0
+        float[] angles = { 0, 15, 30, 45 }; // Ángulos de disparo
 
-        // Disparar dos balas por cada ángulo
-        for (int j = 0; j < 2; j++)
+        for (int i = 0; i < angles.Length; i++)
         {
-            // Crear la bala
-            GameObject bullet = Instantiate(EnemyBulletPrefab, transform.position + (Vector3)baseDirection * 0.1f, Quaternion.identity);
-            bullet.transform.localScale = new Vector3(-1, 1, 1); // Invertir la escala según la dirección
-            bullet.GetComponent<EnemyBulletScript>().SetDirection(shootDirection);
+            // Calcular la dirección ajustada con el ángulo
+            Vector2 shootDirection = Quaternion.Euler(0, 0, angles[i] * (baseDirection.x > 0 ? 1 : -1)) * baseDirection;
 
-            // Esperar antes de disparar la siguiente bala
-            yield return new WaitForSeconds(0.1f);
+            // Disparar dos balas por cada ángulo
+            for (int j = 0; j < 2; j++)
+            {
+                // Crear la bala
+                GameObject bullet = Instantiate(EnemyBulletPrefab, transform.position + (Vector3)baseDirection * 0.1f, Quaternion.identity);
+                bullet.transform.localScale = new Vector3(-1, 1, 1); // Invertir la escala según la dirección
+                bullet.GetComponent<EnemyBulletScript>().SetDirection(shootDirection);
+
+                // Esperar antes de disparar la siguiente bala
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            // Esperar antes de disparar las siguientes balas
+            yield return new WaitForSeconds(0.2f);
         }
 
-        // Esperar antes de disparar las siguientes balas
-        yield return new WaitForSeconds(0.2f);
+        isShooting = false; // Se pone a false cuando termina de disparar
     }
-
-    isShooting = false; // Se pone a false cuando termina de disparar
-}
 
     public void Hit()
     {
@@ -144,13 +158,11 @@ public class FinalBossScript : MonoBehaviour
         if (currentStates == bossStates.moving) return;
 
         hitsReceived++; // Aumentamos el contador de golpes
-        Health--;
+        health--;
 
-        if (Health <= 0)
+        if (health <= 0)
         {
-            // Aquí se manejaría la lógica cuando el jefe muere, por ejemplo:
-            Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
+            isDefeated = true;
         }
     }
 

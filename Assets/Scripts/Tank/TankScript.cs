@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TankScript : MonoBehaviour
 {
@@ -34,8 +35,10 @@ public class TankScript : MonoBehaviour
     public Collider2D hitBox;
 
     [Header("Health")]
-    public int health = 5;
+    public float health = 5;
+    public float maxHealth;
     public GameObject explosion;
+    public Image healthBar;
     private bool isDefeated;
 
 
@@ -48,13 +51,15 @@ public class TankScript : MonoBehaviour
     {
 
         currentStates = bossStates.shooting;
-
+        maxHealth = health;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
 
         switch (currentStates)
         {
