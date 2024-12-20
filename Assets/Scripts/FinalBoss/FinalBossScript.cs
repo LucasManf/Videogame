@@ -36,6 +36,8 @@ public class FinalBossScript : MonoBehaviour
 
     private bool isDefeated;
 
+    public GameObject flag;
+
     void Start()
     {
         currentStates = bossStates.shooting;
@@ -85,6 +87,7 @@ public class FinalBossScript : MonoBehaviour
         {
             Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
+            flag.SetActive(true);
         }
     }
 

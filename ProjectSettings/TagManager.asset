@@ -15,6 +15,7 @@ TagManager:
   - DmgCollider
   - Finish2
   - BossFight
+  - Finish3
   layers:
   - Default
   - TransparentFX

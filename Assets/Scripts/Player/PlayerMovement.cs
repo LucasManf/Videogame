@@ -332,6 +332,10 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(3);
         }
+        if (other.gameObject.CompareTag("Finish3"))
+        {
+            SceneManager.LoadScene(4);
+        }
         if (other.gameObject.CompareTag("BossFight"))
         {
             bossHealthBar.gameObject.SetActive(true);
