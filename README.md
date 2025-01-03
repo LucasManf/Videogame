@@ -35,7 +35,8 @@
 2. Salta, agáchate y dispara para derrotar a los enemigos.
 3. Usa granadas y power-ups para mejorar tus habilidades y vencer a los bosses.
 
-
+## Donde Jugar
+https://lucasmanfredi.itch.io/the-last-soldier
 
 ## Imagenes
 ![Portada 2](https://github.com/user-attachments/assets/1d68c2cb-c893-4f0c-8dbf-762951df29be)
