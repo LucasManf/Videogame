@@ -29,6 +29,18 @@
 - **E** para tirar granadas.
 - **ESC** para poner pausa.
 
+## Imagenes
+![Portada 2](https://github.com/user-attachments/assets/1d68c2cb-c893-4f0c-8dbf-762951df29be)
+![Menu de Inicio](https://github.com/user-attachments/assets/d08f8c41-204e-4409-83bd-9d8d3e81e99e)
+![Boss tanque Daño](https://github.com/user-attachments/assets/dcdd928f-8bf1-4614-bc92-a30cfa08bfa8)
+![Controles](https://github.com/user-attachments/assets/4b7f5ff9-aa55-465a-9d2d-e7eed9f0934d)
+![Laboratorio secreto](https://github.com/user-attachments/assets/b54aafc1-200d-4590-a8d6-bd58548419e1)
+
+
+
+
+
+
 ## Cómo Jugar
 
 1. Usa las teclas de dirección o WASD para moverte.
